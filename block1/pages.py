@@ -11,7 +11,11 @@ class Guess1(Page):
         s1 = self.subsession.signal1
         s2 = self.subsession.signal2
         s3 = self.subsession.signal3
-        return s1, s2, s3
+        return dict(
+            s1=s1,
+            s2=s2,
+            s3=s3,
+        )
 
 
 class Guess2(Page):

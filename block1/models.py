@@ -26,19 +26,19 @@ class Constants(BaseConstants):
 
 
 class Subsession(BaseSubsession):
-    color = models.FloatField()
-    signal1 = models.FloatField()
-    signal2 = models.FloatField()
-    signal3 = models.FloatField()
-    signal4 = models.FloatField()
+    color = models.IntegerField()
+    signal1 = models.IntegerField()
+    signal2 = models.IntegerField()
+    signal3 = models.IntegerField()
+    signal4 = models.IntegerField()
 
-    def creating_session(subsession):
+    def creating_session(self):
         states = pd.read_csv('block1/Block1rounds.csv')
-        subsession.color = states['Color'][subsession.round_number-1]
-        subsession.signal1 = states['Signal1'][subsession.round_number-1]
-        subsession.signal2 = states['Signal2'][subsession.round_number-1]
-        subsession.signal3 = states['Signal3'][subsession.round_number-1]
-        subsession.signal4 = states['Signal4'][subsession.round_number-1]
+        self.color = states['Color'][self.round_number-1]
+        self.signal1 = states['Signal1'][self.round_number-1]
+        self.signal2 = states['Signal2'][self.round_number-1]
+        self.signal3 = states['Signal3'][self.round_number-1]
+        self.signal4 = states['Signal4'][self.round_number-1]
 
 
 class Group(BaseGroup):
