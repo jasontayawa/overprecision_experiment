@@ -46,12 +46,12 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    guess1 = models.IntegerField(initial=random.randint(0,100),
+    guess1 = models.IntegerField(initial=50,
                                min=0,
                                max=100,
                                label="What do you this is the chance that the assign color for the round is Red",
                                widget=widgets.Slider)
-    guess2 = models.IntegerField(initial=random.randint(0,100),
+    guess2 = models.IntegerField(initial=50,
                                min=0,
                                max=100,
                                label="What do you this is the chance that the assign color for the round is Red",
