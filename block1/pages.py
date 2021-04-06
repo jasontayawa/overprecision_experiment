@@ -7,6 +7,13 @@ class Guess1(Page):
     form_model = 'player'
     form_fields = ['guess1']
 
+    def vars_for_template(self):
+        s1 = self.subsession.signal1
+        s2 = self.subsession.signal2
+        s3 = self.subsession.signal3
+        return s1, s2, s3
+
+
 class Guess2(Page):
     form_model = 'player'
     form_fields = ['guess2']
@@ -19,4 +26,4 @@ class Results(Page):
     pass
 
 
-page_sequence = [MyPage, ResultsWaitPage, Results]
+page_sequence = [Guess1, Guess2, ResultsWaitPage, Results]
