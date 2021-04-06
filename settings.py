@@ -26,6 +26,15 @@ LANGUAGE_CODE = 'en'
 REAL_WORLD_CURRENCY_CODE = 'USD'
 USE_POINTS = True
 
+ROOMS = [
+    dict(
+        name='econ_lab',
+        display_name='OSU Experimental Economics Lab',
+        #participant_label_file='_rooms/econ_lab.txt',
+        #use_secure_urls=True
+    ),
+]
+
 ADMIN_USERNAME = 'admin'
 # for security, best to set admin password in an environment variable
 ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')
