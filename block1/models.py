@@ -27,23 +27,23 @@ class Constants(BaseConstants):
 
 class Subsession(BaseSubsession):
 
-    Rrrr = models.FloatField()
-    Rrrb = models.FloatField()
-    Rrbr = models.FloatField()
-    Rbrr = models.FloatField()
-    Rrbb = models.FloatField()
-    Rbrb = models.FloatField()
-    Rbbr = models.FloatField()
-    Rbbb = models.FloatField()
+    Rrrr = models.IntegerField()
+    Rrrb = models.IntegerField()
+    Rrbr = models.IntegerField()
+    Rbrr = models.IntegerField()
+    Rrbb = models.IntegerField()
+    Rbrb = models.IntegerField()
+    Rbbr = models.IntegerField()
+    Rbbb = models.IntegerField()
 
-    Brrr = models.FloatField()
-    Brrb = models.FloatField()
-    Brbr = models.FloatField()
-    Bbrr = models.FloatField()
-    Brbb = models.FloatField()
-    Bbrb = models.FloatField()
-    Bbbr = models.FloatField()
-    Bbbb = models.FloatField()
+    Brrr = models.IntegerField()
+    Brrb = models.IntegerField()
+    Brbr = models.IntegerField()
+    Bbrr = models.IntegerField()
+    Brbb = models.IntegerField()
+    Bbrb = models.IntegerField()
+    Bbbr = models.IntegerField()
+    Bbbb = models.IntegerField()
 
 
 
@@ -62,37 +62,37 @@ class Subsession(BaseSubsession):
             p.signal3 = df['Signal3'][(20 * (p.partition - 1)) + self.round_number - 1]
             p.signal4 = df['Signal4'][(20 * (p.partition - 1)) + self.round_number - 1]
 
-        Rrrr = df[(df.Color == 1) & (df.Signal1 == 1) & (df.Signal2 == 1) & (df.Signal3 == 1)].count()['Color']
+        self.Rrrr = df[(df.Color == 1) & (df.Signal1 == 1) & (df.Signal2 == 1) & (df.Signal3 == 1)].count()['Color']
 
-        Rrrb = df[(df.Color == 1) & (df.Signal1 == 1) & (df.Signal2 == 1) & (df.Signal3 == 0)].count()['Color']
+        self.Rrrb = df[(df.Color == 1) & (df.Signal1 == 1) & (df.Signal2 == 1) & (df.Signal3 == 0)].count()['Color']
 
-        Rrbr = df[(df.Color == 1) & (df.Signal1 == 1) & (df.Signal2 == 0) & (df.Signal3 == 1)].count()['Color']
+        self.Rrbr = df[(df.Color == 1) & (df.Signal1 == 1) & (df.Signal2 == 0) & (df.Signal3 == 1)].count()['Color']
 
-        Rbrr = df[(df.Color == 1) & (df.Signal1 == 0) & (df.Signal2 == 1) & (df.Signal3 == 1)].count()['Color']
+        self.Rbrr = df[(df.Color == 1) & (df.Signal1 == 0) & (df.Signal2 == 1) & (df.Signal3 == 1)].count()['Color']
 
-        Rrbb = df[(df.Color == 1) & (df.Signal1 == 1) & (df.Signal2 == 0) & (df.Signal3 == 0)].count()['Color']
+        self.Rrbb = df[(df.Color == 1) & (df.Signal1 == 1) & (df.Signal2 == 0) & (df.Signal3 == 0)].count()['Color']
 
-        Rbrb = df[(df.Color == 1) & (df.Signal1 == 0) & (df.Signal2 == 1) & (df.Signal3 == 0)].count()['Color']
+        self.Rbrb = df[(df.Color == 1) & (df.Signal1 == 0) & (df.Signal2 == 1) & (df.Signal3 == 0)].count()['Color']
 
-        Rbbr = df[(df.Color == 1) & (df.Signal1 == 0) & (df.Signal2 == 0) & (df.Signal3 == 1)].count()['Color']
+        self.Rbbr = df[(df.Color == 1) & (df.Signal1 == 0) & (df.Signal2 == 0) & (df.Signal3 == 1)].count()['Color']
 
-        Rbbr = df[(df.Color == 1) & (df.Signal1 == 0) & (df.Signal2 == 0) & (df.Signal3 == 0)].count()['Color']
+        self.Rbbb = df[(df.Color == 1) & (df.Signal1 == 0) & (df.Signal2 == 0) & (df.Signal3 == 0)].count()['Color']
 
-        Brrr = df[(df.Color == 0) & (df.Signal1 == 1) & (df.Signal2 == 1) & (df.Signal3 == 1)].count()['Color']
+        self.Brrr = df[(df.Color == 0) & (df.Signal1 == 1) & (df.Signal2 == 1) & (df.Signal3 == 1)].count()['Color']
 
-        Brrb = df[(df.Color == 0) & (df.Signal1 == 1) & (df.Signal2 == 1) & (df.Signal3 == 0)].count()['Color']
+        self.Brrb = df[(df.Color == 0) & (df.Signal1 == 1) & (df.Signal2 == 1) & (df.Signal3 == 0)].count()['Color']
 
-        Brbr = df[(df.Color == 0) & (df.Signal1 == 1) & (df.Signal2 == 0) & (df.Signal3 == 1)].count()['Color']
+        self.Brbr = df[(df.Color == 0) & (df.Signal1 == 1) & (df.Signal2 == 0) & (df.Signal3 == 1)].count()['Color']
 
-        Bbrr = df[(df.Color == 0) & (df.Signal1 == 0) & (df.Signal2 == 1) & (df.Signal3 == 1)].count()['Color']
+        self.Bbrr = df[(df.Color == 0) & (df.Signal1 == 0) & (df.Signal2 == 1) & (df.Signal3 == 1)].count()['Color']
 
-        Brbb = df[(df.Color == 0) & (df.Signal1 == 1) & (df.Signal2 == 0) & (df.Signal3 == 0)].count()['Color']
+        self.Brbb = df[(df.Color == 0) & (df.Signal1 == 1) & (df.Signal2 == 0) & (df.Signal3 == 0)].count()['Color']
 
-        Bbrb = df[(df.Color == 0) & (df.Signal1 == 0) & (df.Signal2 == 1) & (df.Signal3 == 0)].count()['Color']
+        self.Bbrb = df[(df.Color == 0) & (df.Signal1 == 0) & (df.Signal2 == 1) & (df.Signal3 == 0)].count()['Color']
 
-        Bbbr = df[(df.Color == 0) & (df.Signal1 == 0) & (df.Signal2 == 0) & (df.Signal3 == 1)].count()['Color']
+        self.Bbbr = df[(df.Color == 0) & (df.Signal1 == 0) & (df.Signal2 == 0) & (df.Signal3 == 1)].count()['Color']
 
-        Bbbb = df[(df.Color == 0) & (df.Signal1 == 0) & (df.Signal2 == 0) & (df.Signal3 == 0)].count()['Color']
+        self.Bbbb = df[(df.Color == 0) & (df.Signal1 == 0) & (df.Signal2 == 0) & (df.Signal3 == 0)].count()['Color']
 
 
 class Group(BaseGroup):

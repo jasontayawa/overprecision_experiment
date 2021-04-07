@@ -14,13 +14,45 @@ class Guess1(Page):
         s2 = self.player.signal2
         s3 = self.player.signal3
         s4 = self.player.signal4
+        Rrrr = self.subsession.Rrrr
+        Rrrb = self.subsession.Rrrb
+        Rrbr = self.subsession.Rrbr
+        Rbrr = self.subsession.Rbrr
+        Rrbb = self.subsession.Rrbb
+        Rbrb = self.subsession.Rbrb
+        Rbbr = self.subsession.Rbbr
+        Rbbb = self.subsession.Rbbb
+
+        Brrr = self.subsession.Brrr
+        Brrb = self.subsession.Brrb
+        Brbr = self.subsession.Brbr
+        Bbrr = self.subsession.Bbrr
+        Brbb = self.subsession.Brbb
+        Bbrb = self.subsession.Bbrb
+        Bbbr = self.subsession.Bbbr
+        Bbbb = self.subsession.Bbbb
         return dict(
             s1=s1,
             s2=s2,
             s3=s3,
             s4=s4,
+            Rrrr=Rrrr,
+            Rrrb=Rrrb,
+            Rrbr=Rrbr,
+            Rbrr=Rbrr,
+            Rrbb=Rrbb,
+            Rbrb=Rbrb,
+            Rbbr=Rbbr,
+            Rbbb=Rbbb,
+            Brrr=Brrr,
+            Brrb=Brrb,
+            Brbr=Brbr,
+            Bbrr=Bbrr,
+            Brbb=Brbb,
+            Bbrb=Bbrb,
+            Bbbr=Bbbr,
+            Bbbb=Bbbb,
         )
-
 
 class Guess2(Page):
     form_model = 'player'
