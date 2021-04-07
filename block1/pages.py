@@ -32,6 +32,16 @@ class Guess1(Page):
         Bbrb = self.subsession.Bbrb
         Bbbr = self.subsession.Bbbr
         Bbbb = self.subsession.Bbbb
+
+        rrr = Rrrr + Brrr
+        rrb = Rrrb + Brrb
+        rbr = Rrbr + Brbr
+        brr = Rbrr + Bbrr
+        rbb = Rrbb + Brbb
+        brb = Rbrb + Bbrb
+        bbr = Rbbr + Bbbr
+        bbb = Rbbb + Bbbb
+
         return dict(
             s1=s1,
             s2=s2,
@@ -53,6 +63,14 @@ class Guess1(Page):
             Bbrb=Bbrb,
             Bbbr=Bbbr,
             Bbbb=Bbbb,
+            rrr=rrr,
+            rrb=rrb,
+            rbr=rbr,
+            brr=brr,
+            rbb=rbb,
+            brb=brb,
+            bbr=bbr,
+            bbb=bbb,
         )
 
 class Guess2(Page):
@@ -82,6 +100,15 @@ class Guess2(Page):
         Bbrb = self.subsession.Bbrb
         Bbbr = self.subsession.Bbbr
         Bbbb = self.subsession.Bbbb
+
+        rrr = Rrrr + Brrr
+        rrb = Rrrb + Brrb
+        rbr = Rrbr + Brbr
+        brr = Rbrr + Bbrr
+        rbb = Rrbb + Brbb
+        brb = Rbrb + Bbrb
+        bbr = Rbbr + Bbbr
+        bbb = Rbbb + Bbbb
 
         # table 2 variables given s1,s2 = rr
 
@@ -152,6 +179,14 @@ class Guess2(Page):
             Bbrb=Bbrb,
             Bbbr=Bbbr,
             Bbbb=Bbbb,
+            rrr=rrr,
+            rrb=rrb,
+            rbr=rbr,
+            brr=brr,
+            rbb=rbb,
+            brb=brb,
+            bbr=bbr,
+            bbb=bbb,
             Rrr_rr=Rrr_rr,
             Rrb_rr=Rrb_rr,
             Rbr_rr=Rbr_rr,
