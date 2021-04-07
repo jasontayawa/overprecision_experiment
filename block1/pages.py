@@ -101,6 +101,7 @@ class Guess2(Page):
         Bbbr = self.subsession.Bbbr
         Bbbb = self.subsession.Bbbb
 
+        # total signal combos for s1 s2 s3
         rrr = Rrrr + Brrr
         rrb = Rrrb + Brrb
         rbr = Rrbr + Brbr
@@ -122,6 +123,13 @@ class Guess2(Page):
         Bbr_rr = self.subsession.Bbr_rr
         Bbb_rr = self.subsession.Bbb_rr
 
+        # total signal combos for s3 s4 given s1,s2 = rr
+
+        rr_rr = Rrr_rr + Brr_rr
+        rb_rr = Rrb_rr + Brb_rr
+        br_rr = Rbr_rr + Bbr_rr
+        bb_rr = Rbb_rr + Bbb_rr
+
         # table 2 variables given s1,s2 = rb
 
         Rrr_rb = self.subsession.Rrr_rb
@@ -133,6 +141,13 @@ class Guess2(Page):
         Brb_rb = self.subsession.Brb_rb
         Bbr_rb = self.subsession.Bbr_rb
         Bbb_rb = self.subsession.Bbb_rb
+
+        # total signal combos for s3 s4 given s1,s2 = rb
+
+        rr_rb = Rrr_rb + Brr_rb
+        rb_rb = Rrb_rb + Brb_rb
+        br_rb = Rbr_rb + Bbr_rb
+        bb_rb = Rbb_rb + Bbb_rb
 
         # table 2 variables given s1,s2 = br
 
@@ -146,6 +161,13 @@ class Guess2(Page):
         Bbr_br = self.subsession.Bbr_br
         Bbb_br = self.subsession.Bbb_br
 
+        # total signal combos for s3 s4 given s1,s2 = br
+
+        rr_br = Rrr_br + Brr_br
+        rb_br = Rrb_br + Brb_br
+        br_br = Rbr_br + Bbr_br
+        bb_br = Rbb_br + Bbb_br
+
         # table 2 variables given s1,s2 = bb
 
         Rrr_bb = self.subsession.Rrr_bb
@@ -157,6 +179,14 @@ class Guess2(Page):
         Brb_bb = self.subsession.Brb_bb
         Bbr_bb = self.subsession.Bbr_bb
         Bbb_bb = self.subsession.Bbb_bb
+
+        # total signal combos for s3 s4 given s1,s2 = bb
+
+        rr_bb = Rrr_bb + Brr_bb
+        rb_bb = Rrb_bb + Brb_bb
+        br_bb = Rbr_bb + Bbr_bb
+        bb_bb = Rbb_bb + Bbb_bb
+
 
         return dict(
             s1=s1,
@@ -219,6 +249,22 @@ class Guess2(Page):
             Brb_bb=Brb_bb,
             Bbr_bb=Bbr_bb,
             Bbb_bb=Bbb_bb,
+            rr_rr = rr_rr,
+            rb_rr = rb_rr,
+            br_rr = br_rr,
+            bb_rr = bb_rr,
+            rr_rb = rr_rb,
+            rb_rb = rb_rb,
+            br_rb = br_rb,
+            bb_rb = bb_rb,
+            rr_br = rr_br,
+            rb_br = rb_br,
+            br_br = br_br,
+            bb_br = bb_br,
+            rr_bb = rr_bb,
+            rb_bb = rb_bb,
+            br_bb = br_bb,
+            bb_bb = bb_bb,
         )
 
 class ResultsWaitPage(WaitPage):
