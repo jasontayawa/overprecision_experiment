@@ -38,11 +38,17 @@ class Guess2(Page):
         )
 
 class ResultsWaitPage(WaitPage):
-    pass
+    def is_displayed(self):
+        self.round_number == Constants.num_rounds
+
+    after_all_players_arrive = 'profit_calculation'
 
 
 class Results(Page):
-    pass
+    def is_displayed(self):
+        self.round_number == Constants.num_rounds
+
+
 
 
 page_sequence = [Guess1, Guess2, ResultsWaitPage, Results]
