@@ -315,12 +315,12 @@ class Player(BasePlayer):
     guess1 = models.IntegerField(initial=50,
                                min=0,
                                max=100,
-                               label="Guess 1: What do you this is the chance that the assign color for the round is Red?",
+                               label="Guess 1: What do you this is the chance that the assigned color for the round is Red?",
                                widget=widgets.Slider)
     guess2 = models.IntegerField(initial=50,
                                min=0,
                                max=100,
-                               label="Guess 2: What do you this is the chance that the assign color for the round is Red?",
+                               label="Guess 2: What do you this is the chance that the assigned color for the round is Red?",
                                widget=widgets.Slider)
 
     color = models.IntegerField()
