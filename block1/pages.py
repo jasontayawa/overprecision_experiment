@@ -278,6 +278,32 @@ class Results(Page):
     def is_displayed(self):
         self.round_number == Constants.num_rounds
 
+    def vars_for_template(self):
+        guess1_random_y = self.player.y1
+        guess1_random_x = self.player.x1
+        guess2_random_y = self.player.y2
+        guess2_random_x = self.player.x2
+
+        selected_round_guess1 = self.player.random_round1
+        color_guess1 = self.player.color_random_round1
+        guess1 = self.player.guess1_random_round1
+
+        selected_round_guess2 = self.player.random_round2
+        color_guess2 = self.player.color_random_round2
+        guess2 = self.player.guess2_random_round2
+
+        return dict(
+            guess1_random_y,
+            guess1_random_x,
+            selected_round_guess1,
+            color_guess1,
+            guess1,
+            guess2_random_y,
+            guess2_random_x,
+            selected_round_guess2,
+            color_guess2,
+            guess2,
+        )
 
 
 

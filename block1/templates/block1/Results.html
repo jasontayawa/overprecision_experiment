@@ -3,11 +3,13 @@
 {% load otree static %}
 
 {% block title %}
-    Page title
+    Payment
 {% endblock %}
 
 {% block content %}
-
+    <p> Round {% selected_round_guess1 %} is selected for your guess 1 payment. </p>
+    <p> The color assigned for the round is {% color_guess1 %}</p>
+    <p> Your guess was {% guess1 %}</p>
     {% next_button %}
 {% endblock %}
 

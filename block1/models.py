@@ -22,7 +22,7 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'block1'
     players_per_group = None
-    num_rounds = 20
+    num_rounds = 60
 
 
 class Subsession(BaseSubsession):
@@ -99,15 +99,15 @@ class Subsession(BaseSubsession):
 
         for p in self.get_players():
             if self.round_number == 1:
-                p.partition = random.randint(1, 100)
+                p.partition = random.randint(1, 50)
             else:
                 p.partition = p.in_round(1).partition
 
-            p.color = df['Color'][(20 * (p.partition - 1)) + self.round_number - 1]
-            p.signal1 = df['Signal1'][(20 * (p.partition - 1)) + self.round_number - 1]
-            p.signal2 = df['Signal2'][(20 * (p.partition - 1)) + self.round_number - 1]
-            p.signal3 = df['Signal3'][(20 * (p.partition - 1)) + self.round_number - 1]
-            p.signal4 = df['Signal4'][(20 * (p.partition - 1)) + self.round_number - 1]
+            p.color = df['Color'][(60 * (p.partition - 1)) + self.round_number - 1]
+            p.signal1 = df['Signal1'][(60 * (p.partition - 1)) + self.round_number - 1]
+            p.signal2 = df['Signal2'][(60 * (p.partition - 1)) + self.round_number - 1]
+            p.signal3 = df['Signal3'][(60 * (p.partition - 1)) + self.round_number - 1]
+            p.signal4 = df['Signal4'][(60 * (p.partition - 1)) + self.round_number - 1]
 
         #Table 1 showing Signals 1,2, and 3
 
@@ -266,8 +266,8 @@ class Subsession(BaseSubsession):
 class Group(BaseGroup):
     def profit_calculation(self):
         for p in self.get_players():
-            p.random_round1 = random.randint(1, 20)
-            p.random_round2 = random.randint(1, 20)
+            p.random_round1 = random.randint(1, 60)
+            p.random_round2 = random.randint(1, 60)
             player_in_round1 = p.in_round(p.random_round1)
             player_in_round2 = p.in_round(p.random_round2)
 
@@ -287,25 +287,25 @@ class Group(BaseGroup):
             p.guess2_random_round2 = player_in_round2.guess2
 
             # random number
-            y1 = random.randint(0, 100)
-            y2 = random.randint(0, 100)
+            p.y1 = random.randint(0, 100)
+            p.y2 = random.randint(0, 100)
 
-            x1 = random.randint(0, 100)
-            x2 = random.randint(0, 100)
+            p.x1 = random.randint(0, 100)
+            p.x2 = random.randint(0, 100)
 
             # BDM payment
-            if p.guess1_random_round1 >= y1 and p.color_random_round1 == 1:
+            if p.guess1_random_round1 >= p.y1 and p.color_random_round1 == 1:
                 p.profit_guess1 = 10
-            elif p.guess1_random_round1 < y1:
-                if x1 <= y1:
+            elif p.guess1_random_round1 < p.y1:
+                if p.x1 <= p.y1:
                     p.profit_guess1 = 10
                 else:
                     p.profit_guess1 = 0
 
-            if p.guess2_random_round2 >= y2 and p.color_random_round2 == 1:
+            if p.guess2_random_round2 >= p.y2 and p.color_random_round2 == 1:
                 p.profit_guess2 = 10
-            elif p.guess2_random_round2 < y2:
-                if x2 <= y2:
+            elif p.guess2_random_round2 < p.y2:
+                if p.x2 <= p.y2:
                     p.profit_guess2 = 10
                 else:
                     p.profit_guess2 = 0
@@ -315,12 +315,12 @@ class Player(BasePlayer):
     guess1 = models.IntegerField(initial=50,
                                min=0,
                                max=100,
-                               label="Guess 1: What do you this is the chance that the assigned color for the round is Red?",
+                               label="Guess 1: What do you is the chance that the assigned color for the round is Red?",
                                widget=widgets.Slider)
     guess2 = models.IntegerField(initial=50,
                                min=0,
                                max=100,
-                               label="Guess 2: What do you this is the chance that the assigned color for the round is Red?",
+                               label="Guess 2: What do you is the chance that the assigned color for the round is Red?",
                                widget=widgets.Slider)
 
     color = models.IntegerField()
@@ -342,6 +342,8 @@ class Player(BasePlayer):
     signal3_random_round1 = models.IntegerField()
     signal4_random_round1 = models.IntegerField()
     guess1_random_round1 = models.IntegerField()
+    y1 = models.IntegerField()
+    x1 = models.IntegerField()
 
     random_round2 = models.IntegerField()
     color_random_round2 = models.IntegerField()
@@ -350,6 +352,8 @@ class Player(BasePlayer):
     signal3_random_round2 = models.IntegerField()
     signal4_random_round2 = models.IntegerField()
     guess2_random_round2 = models.IntegerField()
+    y2 = models.IntegerField()
+    x2 = models.IntegerField()
 
 
 
