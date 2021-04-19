@@ -22,7 +22,7 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'block1'
     players_per_group = None
-    num_rounds = 60
+    num_rounds = 1#60
 
 
 class Subsession(BaseSubsession):
@@ -266,8 +266,8 @@ class Subsession(BaseSubsession):
 class Group(BaseGroup):
     def profit_calculation(self):
         for p in self.get_players():
-            p.random_round1 = random.randint(1, 60)
-            p.random_round2 = random.randint(1, 60)
+            p.random_round1 = 1#random.randint(1, 60)
+            p.random_round2 = 1#random.randint(1, 60)
             player_in_round1 = p.in_round(p.random_round1)
             player_in_round2 = p.in_round(p.random_round2)
 

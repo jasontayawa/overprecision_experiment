@@ -3,17 +3,42 @@
 {% load otree static %}
 
 {% block title %}
-    Payment
+    Payment for Guess 1 and Guess 2
 {% endblock %}
 
 {% block content %}
-    <p> Round {{ selected_round_guess1 }} is selected for your guess 1 payment. </p>
-    <p> The color assigned for the round is {{ color_guess1 }}</p>
-    <p> Your guess was {{ guess1 }}.</p>
-    <p> Round {{ selected_round_guess2 }} is selected for your guess 2 payment. </p>
-    <p> The color assigned for the round is {{ color_guess2 }}</p>
-    <p> Your guess was {{ guess2 }}.</p>
-    <p> Your total payment is {{ payment }}</p>
+    <p> Round {{ selected_round_guess1 }} is selected for your Guess 1 payment. </p>
+    {% if color_guess1 == 1 %}
+        <p> The color assigned for the Round {{ selected_round_guess1 }} is <span style="color:red";>Red</span> </p>
+    {% elif color_guess1 == 0 %}
+        <p> The color assigned for the round is <span style="color:blue";>Blue</span> </p>
+    {% endif %}
+    {% if guess1 >= y1 and color_guess1 == 1  %}
+        <p> Your guess was {{ guess1 }} which is greater than the randomly selected number {{ y1 }}. Since the assigned color is <span style="color:red";>Red</span>, you got $10.</p>
+    {% elif guess1 >= y1 and color_guess1 == 0  %}
+        <p> Your guess was {{ guess1 }} which is greater than the randomly selected number {{ y1 }}. Since the assigned color is <span style="color:blue";>Blue</span>, you got $0.</p>
+    {% elif guess1 < y1 and x1 <= y1 %}
+        <p> Your guess was {{ guess1 }} which is less than the randomly selected number {{ y1 }}. From a lottery with {{ y1 }}% of getting $10, you got $10. </p>
+    {% elif guess1 < y1 and x1 > y1 %}
+        <p> Your guess was {{ guess1 }} which is less than the randomly selected number {{ y1 }}. From a lottery with {{ y1 }}% of getting $10, you got $0. </p>
+    {% endif %}
+    <br>
+    <p> Round {{ selected_round_guess2 }} is selected for your Guess 2 payment. </p>
+    {% if color_guess2 == 1 %}
+        <p> The color assigned for the Round {{ selected_round_guess2 }} is <span style="color:red";>Red</span> </p>
+    {% elif color_guess2 == 0 %}
+        <p> The color assigned for the round is <span style="color:blue";>Blue</span> </p>
+    {% endif %}
+    {% if guess2 >= y2 and color_guess2 == 1  %}
+        <p> Your guess was {{ guess2 }} which is greater than the randomly selected number {{ y2 }}. Since the assigned color is <span style="color:red";>Red</span>, you got $10.</p>
+    {% elif guess2 >= y2 and color_guess2 == 0  %}
+        <p> Your guess was {{ guess2 }} which is greater than the randomly selected number {{ y2 }}. Since the assigned color is <span style="color:blue";>Blue</span>, you got $0.</p>
+    {% elif guess2 < y2 and x2 <= y2 %}
+        <p> Your guess was {{ guess2 }} which is less than the randomly selected number {{ y2 }}. From a lottery with {{ y2 }}% of getting $10, you got $10. </p>
+    {% elif guess2 < y2 and x2 > y2 %}
+        <p> Your guess was {{ guess2 }} which is less than the randomly selected number {{ y2 }}. From a lottery with {{ y2 }}% of getting $10, you got $0. </p>
+    {% endif %}
+    <p> Your total payment including the participation fee is {{ participant.payoff_plus_participation_fee }}</p>
     {% next_button %}
 {% endblock %}
 
