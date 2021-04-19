@@ -294,21 +294,29 @@ class Group(BaseGroup):
             p.x2 = random.randint(0, 100)
 
             # BDM payment
-            if p.guess1_random_round1 >= p.y1 and p.color_random_round1 == 1:
-                p.profit_guess1 = 10
-            elif p.guess1_random_round1 < p.y1:
+            if p.guess1_random_round1 >= p.y1:
+                if p.color_random_round1 == 1:
+                    p.profit_guess1 = 10
+                else:
+                    p.profit_guess1 = 0
+            else:
                 if p.x1 <= p.y1:
                     p.profit_guess1 = 10
                 else:
                     p.profit_guess1 = 0
 
-            if p.guess2_random_round2 >= p.y2 and p.color_random_round2 == 1:
-                p.profit_guess2 = 10
-            elif p.guess2_random_round2 < p.y2:
+            if p.guess2_random_round2 >= p.y2:
+                if p.color_random_round2 == 1:
+                    p.profit_guess2 = 10
+                else:
+                    p.profit_guess2 = 0
+            else:
                 if p.x2 <= p.y2:
                     p.profit_guess2 = 10
                 else:
                     p.profit_guess2 = 0
+
+            p.payoff = p.profit_guess1 + p.profit_guess2
 
 
 class Player(BasePlayer):

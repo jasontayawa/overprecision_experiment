@@ -7,9 +7,13 @@
 {% endblock %}
 
 {% block content %}
-    <p> Round {% selected_round_guess1 %} is selected for your guess 1 payment. </p>
-    <p> The color assigned for the round is {% color_guess1 %}</p>
-    <p> Your guess was {% guess1 %}</p>
+    <p> Round {{ selected_round_guess1 }} is selected for your guess 1 payment. </p>
+    <p> The color assigned for the round is {{ color_guess1 }}</p>
+    <p> Your guess was {{ guess1 }}.</p>
+    <p> Round {{ selected_round_guess2 }} is selected for your guess 2 payment. </p>
+    <p> The color assigned for the round is {{ color_guess2 }}</p>
+    <p> Your guess was {{ guess2 }}.</p>
+    <p> Your total payment is {{ payment }}</p>
     {% next_button %}
 {% endblock %}
 

@@ -268,15 +268,17 @@ class Guess2(Page):
         )
 
 class ResultsWaitPage(WaitPage):
+
+    body_text = 'Please wait while we determine your final payoff.'
     def is_displayed(self):
-        self.round_number == Constants.num_rounds
+        return self.round_number == 60
 
     after_all_players_arrive = 'profit_calculation'
 
 
 class Results(Page):
     def is_displayed(self):
-        self.round_number == Constants.num_rounds
+        return self.round_number == 60
 
     def vars_for_template(self):
         guess1_random_y = self.player.y1
@@ -292,17 +294,20 @@ class Results(Page):
         color_guess2 = self.player.color_random_round2
         guess2 = self.player.guess2_random_round2
 
+        payment = self.participant.payoff
+
         return dict(
-            guess1_random_y,
-            guess1_random_x,
-            selected_round_guess1,
-            color_guess1,
-            guess1,
-            guess2_random_y,
-            guess2_random_x,
-            selected_round_guess2,
-            color_guess2,
-            guess2,
+            guess1_random_y=guess1_random_y,
+            guess1_random_x=guess1_random_x,
+            selected_round_guess1=selected_round_guess1,
+            color_guess1=color_guess1,
+            guess1=guess1,
+            guess2_random_y=guess2_random_y,
+            guess2_random_x=guess2_random_x,
+            selected_round_guess2=selected_round_guess2,
+            color_guess2=color_guess2,
+            guess2=guess2,
+            payment=payment,
         )
 
 
