@@ -6,12 +6,18 @@
 {% endblock %}
 
 {% block content %}
-    <p>Thank you for participating in this experiment</p>
+    <p>Thank you {{ player.name }} for participating in this experiment!</p>
     <p>Please make sure you make a record of your payment and subject ID.</p>
     <ul>
-        <li>Your total payment {%  %}</li>
-        <li>Your subject ID: </li>
+        <li>Your total payment for this session: {{ participant.payoff_plus_participation_fee  }}</li>
+        <li>Your subject ID for this session: {{ participant.id_in_session }} </li>
     </ul>
+    <p> Your payment will be sent to the Venmo account you have indicated @{{ player.venmo }} with the corresponding phone number with a last 4 digits {{ player.phone }}.</p>
+    <p> If you have any concerns, please contact <strong>Jason Tayawa</strong> at <a href="mailto:tayawa.1@osu.edu">tayawa.1@osu.edu</a>. </p>
+
+    <br>
+    <button onclick="window.print();">Print a copy of this receipt.</button>
+    <br>
     {% next_button %}
 {% endblock %}
 

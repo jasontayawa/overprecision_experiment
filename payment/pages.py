@@ -7,12 +7,11 @@ class PaymentInfo(Page):
     form_model = 'player'
     form_fields = ['name', 'venmo', 'phone']
 
+    def before_next_page(self):
+            self.player.payment = round(float(self.participant.payoff_plus_participation_fee()),2)
 
-class ResultsWaitPage(WaitPage):
-    pass
 
-
-class Results(Page):
+class End(Page):
     pass
 
 
