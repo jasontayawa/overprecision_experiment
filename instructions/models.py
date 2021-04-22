@@ -12,7 +12,7 @@ Your app description
 
 
 class Constants(BaseConstants):
-    name_in_url = 'back_button_v1'
+    name_in_url = 'Instructions'
     players_per_group = None
     num_rounds = 1
 

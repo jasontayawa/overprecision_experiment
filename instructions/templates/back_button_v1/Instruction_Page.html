@@ -1,0 +1,309 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+   
+{% endblock %}
+
+{% block scripts %}
+
+<script src="{% static 'back_button_v1/js/prev_next_button.js' %}"></script>
+
+{% endblock %}
+
+
+{% block styles %}
+
+<link href="{% static 'back_button_v1/css/custom.css' %}" rel="stylesheet">
+
+{% endblock %}
+
+
+{% block content %}
+
+<!-- Tab navigation -->
+<ul class="nav nav-tabs   fixed-top navbar-light bg-light justify-content-center" id="myTab" role="tablist">
+  
+
+  <li class="nav-item">
+    <a class="nav-link active" id="part1-tab" data-toggle="tab" href="#part1" role="tab" aria-controls="part1" onclick="topFunction()"> Introduction </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" id="part2-tab" data-toggle="tab" href="#part2" role="tab" aria-controls="part2" onclick="topFunction()"> Rounds </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" id="part3-tab" data-toggle="tab" href="#part3" role="tab" aria-controls="part3" onclick="topFunction()"> Singals </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" id="part4-tab" data-toggle="tab" href="#part4" role="tab" aria-controls="part4" onclick="topFunction()"> Blocks </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" id="part5-tab" data-toggle="tab" href="#part5" role="tab" aria-controls="part5" onclick="topFunction()"> Summary </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" id="part6-tab" data-toggle="tab" href="#part6" role="tab" aria-controls="part6" onclick="topFunction()"> Payment </a>
+  </li>
+
+</ul>
+<br>
+<br>
+
+
+<!-- Tab content -->
+<div class="tab-content" id="myTabContent">
+
+  <div class="tab-pane show active" id="part1" role="tabpanel" aria-labelledby="part1-tab">
+
+    <div class="card-header bg-transparent mainheader" >
+     <h3 class="card-title font-weight-bold mt-3 mb-3"> Introduction </h3>
+    </div>
+    <p>
+        Welcome and thank you for taking part in this Economics Experiment. This experiment will last for around 1 hour. If you read the instructions carefully, you can earn a considerable amount of money depending on your decisions and chance. Your earnings will be paid out to you in cash (Venmo) at the end of the experiment.
+    </p>
+    <p><i>
+        Before we begin, we ask that you turn off your cell phones for the duration of this experiment. We also ask that you do not communicate with anyone for the duration of this experiment and only use the software provided to you on your devices. Failure to comply with these rules may result in dismissal from this experiment and you will not be paid any earnings you may have otherwise received.
+    </i></p>
+    <h3>Overview</h3>
+    <p>
+        This experiment consists of <strong>60 rounds</strong> of belief updating tasks administered in <strong>three 20-round blocks</strong>. You will be compensated based on a randomly selected belief you reported across all rounds.    </p>
+
+    <button onclick="topFunction()" type="button" class="nexttab btn-primary btn next">Next</button>
+  </div>
+
+
+  <div class="tab-pane" id="part2" role="tabpanel" aria-labelledby="part2-tab">
+
+    <div class="card-header bg-transparent mainheader" >
+     <h3 class="card-title font-weight-bold mt-3 mb-3"> Rounds </h3>
+    </div>
+    <p>
+        In each round, you will be assigned a color: Red or Blue. Each color is equally likely to be assigned for a round (50-50 chance). Note that the color in each round will be chosen independently of the colors in other rounds.
+    </p>
+    <p>
+        Your task is to guess the chance that the color assigned to you is Red. In particular, for each round you will make two guesses for the question:
+    </p>
+    <p><strong> What do you think is the chance (0-100)% that the color assigned for the round is Red?
+    </strong></p>
+    <p>
+        You are given 4 robots that generate signals to help you guess. The timeline for each set of guesses in a round is as follows
+        <ol>
+            <li>You will receive 3 signals. Then, you will make your first guess (Guess 1) about the chance that the color assigned to you is red based on those 3 signals.</li>
+            <li> You will receive a 4th signal. Then, you will make your second guess (Guess 2) about the chance that the color assigned to you is Red based on all the 4 signals given.</li>
+        </ol>
+    </p>
+
+    <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
+    <button onclick="topFunction()" type="button" class="nexttab btn-primary btn next">Next</button>
+  </div>
+
+  <div class="tab-pane" id="part3" role="tabpanel" aria-labelledby="part3-tab">
+
+    <div class="card-header bg-transparent mainheader" >
+     <h3 class="card-title font-weight-bold mt-3 mb-3"> Signals </h3>
+    </div>
+    <br>
+    <h3>Signals before Guess 1</h3>
+    <p>
+      Before making your first guess (Guess 1), you will be shown three signals generated by Robots X, Y, and Z (one signal each). Each robot’s signal correctly states the assigned color of the round with p% chance.
+    </p>
+    <p>
+      For example, if the color assigned for the round is Red, then Robot X will state the color Red with p% chance and Blue with (100-p)% chance. Robots Y and Z will do the same.
+    </p>
+    <h3>Signals after Guess 1</h3>
+    <p>
+      Before making your second guess (Guess 2), you will receive a 4th signal. This 4th signal can come from Robot Z with L% chance or from Robot W with (1-L)% chance. If it is from Robot Z, it will repeat the signal it produced before Guess 1. If it is from Robot W, then the 4th signal will match the assigned color for the round with 99% chance. You will not know whether the 4th signal was generated by Robot Z or Robot W.
+    </p>
+    <p>
+      For example, if the assigned color is Red then Robot W will state the color Red with 99% chance and Blue with 1% chance. The 4th signal repeats Robot Z’s signal with L% chance or reports Robot W’s color with (1-L)% chance.
+    </p>
+
+    <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
+    <button class="nexttab btn-primary btn next">Next</button>
+  </div>
+
+  <div class="tab-pane" id="part4" role="tabpanel" aria-labelledby="part4-tab">
+
+    <div class="card-header bg-transparent mainheader" >
+     <h3 class="card-title font-weight-bold mt-3 mb-3"> Blocks </h3>
+    </div>
+    <p>
+      There will be three blocks with 20 rounds per block. As you go through each block, more information is presented. That is, a summary table of simulated assigned colors and signal draws will be presented with the four signals in a round. Note that your task remains the same. You will still make two guesses about the chance that the assigned color for the round is red--one before receiving the 4th signals and one after receiving it.
+    </p>
+    <p>
+      In Block 1, no summary table will be presented with your 4 signals.
+    </p>
+    <p>
+      In Block 2, you will be provided with a summary table along with the first three signals generated for the round. This summary table will consist of a large number of rounds that show the assigned color and the first three signals for those rounds. These rounds will be simulated from the same procedure that generated the 20 rounds you will have faced in Block 1.
+    </p>
+    <p>
+      The following table is an example of the first summary table that will be presented. It summarizes the  assigned color and first three signals for 200 rounds given the p% and L%.
+    </p>
+            <table class="tg">
+        <thead>
+          <tr>
+            <th class="tg-7btt">Signals (1, 2, 3) &#x2192;</th>
+            <th class="tg-c3ow">(<span style="color:red";>red</span>,<span style="color:red";>red</span>,<span style="color:red";>red</span>)</th>
+            <th class="tg-c3ow">(<span style="color:red";>red</span>,<span style="color:red";>red</span>,<span style="color:blue";>blue</span>)</th>
+            <th class="tg-c3ow">(<span style="color:red";>red</span>,<span style="color:blue";>blue</span>,<span style="color:red";>red</span>)</th>
+            <th class="tg-c3ow">(<span style="color:blue";>blue</span>,<span style="color:red";>red</span>,<span style="color:red";>red</span>)</th>
+            <th class="tg-c3ow">(<span style="color:red";>red</span>,<span style="color:blue";>blue</span>,<span style="color:blue";>blue</span>)</th>
+            <th class="tg-c3ow">(<span style="color:blue";>blue</span>,<span style="color:red";>red</span>,<span style="color:blue";>blue</span>)</th>
+            <th class="tg-c3ow">(<span style="color:blue";>blue</span>,<span style="color:blue";>blue</span>,<span style="color:red";>red</span>)</th>
+            <th class="tg-c3ow">(<span style="color:blue";>blue</span>,<span style="color:blue";>blue</span>,<span style="color:blue";>blue</span>)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tg-7btt">Color <span style="color:red";>Red</span></td>
+            <td class="tg-c3ow">17</td>
+            <td class="tg-c3ow">13</td>
+            <td class="tg-c3ow">14</td>
+            <td class="tg-c3ow">13</td>
+            <td class="tg-c3ow">12</td>
+            <td class="tg-c3ow">11</td>
+            <td class="tg-c3ow">11</td>
+            <td class="tg-c3ow">9</td>
+          </tr>
+          <tr>
+            <td class="tg-7btt">Color <span style="color:blue";>Blue</span></td>
+            <td class="tg-c3ow">10</td>
+            <td class="tg-c3ow">11</td>
+            <td class="tg-c3ow">11</td>
+            <td class="tg-c3ow">10</td>
+            <td class="tg-c3ow">13</td>
+            <td class="tg-c3ow">14</td>
+            <td class="tg-c3ow">14</td>
+            <td class="tg-c3ow">17</td>
+          </tr>
+          <td class="tg-7btt"> Signal Total </td>
+            <td class="tg-c3ow">27</td>
+            <td class="tg-c3ow">24</td>
+            <td class="tg-c3ow">25</td>
+            <td class="tg-c3ow">23</td>
+            <td class="tg-c3ow">25</td>
+            <td class="tg-c3ow">25</td>
+            <td class="tg-c3ow">25</td>
+            <td class="tg-c3ow">26</td>
+          </tr>
+        </tbody>
+        </table>
+        <p>In Block 3, you will be provided with two summary tables. The first summary table is the same table that will be shown in Block 2. The second summary table will be provided along with the 4th signal. This summary table will show the assigned color with the 3rd and 4th signals from the large number  of simulated rounds. Only the relevant simulated rounds will be presented based on the 1st and 2nd signal you will receive in a round.
+        </p>
+        <p>
+            The following table is an example of the second summary table that will be presented when the realized Signal 1 and Signal 2 for the round are both red r. It summarizes the  assigned color, Signal 3, and Signal 4 from 200 simulated rounds when Signal 1 and Signal 3 are red.
+        </p>
+        <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-7btt">Signals (3, 4) &#x2192;</th>
+                <th class="tg-c3ow">(<span style="color:red";>red</span>,<span style="color:red";>red</span>)</th>
+                <th class="tg-c3ow">(<span style="color:red";>red</span>,<span style="color:blue";>blue</span>)</th>
+                <th class="tg-c3ow">(<span style="color:blue";>blue</span>,<span style="color:red";>red</span>)</th>
+                <th class="tg-c3ow">(<span style="color:blue";>blue</span>,<span style="color:blue";>blue</span>)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-7btt">Color <span style="color:red";>Red</span></td>
+                <td class="tg-c3ow">{{ Rrr_rr }}</td>
+                <td class="tg-c3ow">{{ Rrb_rr }}</td>
+                <td class="tg-c3ow">{{ Rbr_rr }}</td>
+                <td class="tg-c3ow">{{ Rbb_rr }}</td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">Color <span style="color:blue";>Blue</span></td>
+                <td class="tg-c3ow">{{ Brr_rr }}</td>
+                <td class="tg-c3ow">{{ Brb_rr }}</td>
+                <td class="tg-c3ow">{{ Bbr_rr }}</td>
+                <td class="tg-c3ow">{{ Bbb_rr }}</td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">Signal Total</td>
+                <td class="tg-c3ow">{{ rr_rr }}</td>
+                <td class="tg-c3ow">{{ rb_rr }}</td>
+                <td class="tg-c3ow">{{ br_rr }}</td>
+                <td class="tg-c3ow">{{ bb_rr }}</td>
+              </tr>
+            </tbody>
+            </table>
+            <p>
+                NOTE: These numbers in the example summary tables above are for illustrative purposes and are not indicative of the actual numbers that will be presented.
+            </p>
+
+    <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
+    <button class="nexttab btn-primary btn next">Next</button>
+  </div>
+
+  <div class="tab-pane" id="part5" role="tabpanel" aria-labelledby="part5-tab">
+
+    <div class="card-header bg-transparent mainheader" >
+     <h3 class="card-title font-weight-bold mt-3 mb-3"> Summary </h3>
+    </div>
+    <br>
+    <p>
+        <ol>
+          <li>
+              This experiment will have 60 rounds of belief updating tasks divided into three 20-round blocks.
+          </li>
+          <li>
+              For each round of a belief updating task, a color will be randomly assigned that is either Red or Blue (with equal probability). In each round, we ask you to make two guesses about the chance that the assigned color for the round is red.
+          </li>
+          <li>
+            In Block 1, you will be given 3 signals then you will make your first guess (Guess 1). Then, you will be given a 4th signal after which you make your second guess (Guess 2).
+          </li>
+          <li>
+            In Block 2, will be given a summary table of assigned colors and the first three signals from a large number of simulated rounds. This summary table will be presented along with your first three signals for the round.
+          </li>
+          <li>
+             In Block 3, the summary table from Block 2 will be shown as well. In addition to this, you will be given a second summary table of assigned colors and the 3rd and 4th signal from the same large number of simulated rounds, which will be restricted based on the 1st and 2nd signals you received for the round. This table is presented along with the 4th signal.
+          </li>
+        </ol>
+    </p>
+
+    <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
+    <button class="nexttab btn-primary btn next">Next</button>
+      </div>
+
+      <div class="tab-pane" id="part6" role="tabpanel" aria-labelledby="part6-tab">
+
+
+    <div class="card-header bg-transparent mainheader" >
+     <h3 class="card-title font-weight-bold mt-3 mb-3"> Payment </h3>
+      </div>
+    <br>
+
+
+        <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis et libero et viverra. Fusce et lorem tortor. Donec blandit eleifend auctor. Nulla sed metus sit amet augue mollis faucibus. Maecenas at consequat lorem, vel varius lectus. In at sem ac lectus mollis pulvinar nec feugiat neque. Integer vel tincidunt nunc, vehicula maximus orci.
+    </p>
+
+        <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
+    <button class="nexttab btn-primary btn next">Next</button>
+      </div>
+
+
+</div>
+
+</body>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0; margin-left: auto;margin-right: auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+
+</style>
+
+
+{% endblock %}
+
+
+
