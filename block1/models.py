@@ -320,16 +320,20 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    guess1 = models.IntegerField(initial=50,
-                               min=0,
-                               max=100,
-                               label="Guess 1: What do you is the chance that the assigned color for the round is Red?",
-                               widget=widgets.Slider)
-    guess2 = models.IntegerField(initial=50,
-                               min=0,
-                               max=100,
-                               label="Guess 2: What do you is the chance that the assigned color for the round is Red?",
-                               widget=widgets.Slider)
+    # guess1 = models.IntegerField(initial=50,
+    #                            min=0,
+    #                            max=100,
+    #                            label="Guess 1: What do you is the chance that the assigned color for the round is Red?",
+    #                            widget=widgets.Slider)
+    # guess2 = models.IntegerField(initial=50,
+    #                            min=0,
+    #                            max=100,
+    #                            label="Guess 2: What do you is the chance that the assigned color for the round is Red?",
+    #                            widget=widgets.Slider)
+    guess1 = models.IntegerField()
+    check_slider_one = models.IntegerField()
+    guess2 = models.IntegerField()
+    check_slider_two = models.IntegerField()
 
     color = models.IntegerField()
     signal1 = models.IntegerField()

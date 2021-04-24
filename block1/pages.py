@@ -7,7 +7,13 @@ import pandas as pd
 
 class Guess1(Page):
     form_model = 'player'
-    form_fields = ['guess1']
+    form_fields = ['guess1',
+                   'check_slider_one']
+
+    def error_message(self, values):
+        print('values is', values)
+        if values['check_slider_one'] == None:
+            return 'Please use the slider to make a decision.'
 
     def vars_for_template(self):
         s1 = self.player.signal1
@@ -75,7 +81,12 @@ class Guess1(Page):
 
 class Guess2(Page):
     form_model = 'player'
-    form_fields = ['guess2']
+    form_fields = ['guess2', 'check_slider_two']
+
+    def error_message(self, values):
+        print('values is', values)
+        if values['check_slider_two'] == None:
+            return 'Please use the slider to make a decision.'
 
     def vars_for_template(self):
         s1 = self.player.signal1
