@@ -210,27 +210,27 @@
             <tbody>
               <tr>
                 <td class="tg-7btt">Color <span style="color:red";>Red</span></td>
-                <td class="tg-c3ow">{{ Rrr_rr }}</td>
-                <td class="tg-c3ow">{{ Rrb_rr }}</td>
-                <td class="tg-c3ow">{{ Rbr_rr }}</td>
-                <td class="tg-c3ow">{{ Rbb_rr }}</td>
+                <td class="tg-c3ow">17</td>
+                <td class="tg-c3ow">0</td>
+                <td class="tg-c3ow">6</td>
+                <td class="tg-c3ow">7</td>
               </tr>
               <tr>
                 <td class="tg-7btt">Color <span style="color:blue";>Blue</span></td>
-                <td class="tg-c3ow">{{ Brr_rr }}</td>
-                <td class="tg-c3ow">{{ Brb_rr }}</td>
-                <td class="tg-c3ow">{{ Bbr_rr }}</td>
-                <td class="tg-c3ow">{{ Bbb_rr }}</td>
+                <td class="tg-c3ow">5</td>
+                <td class="tg-c3ow">5</td>
+                <td class="tg-c3ow">0</td>
+                <td class="tg-c3ow">1</td>
               </tr>
               <tr>
                 <td class="tg-7btt">Signal Total</td>
-                <td class="tg-c3ow">{{ rr_rr }}</td>
-                <td class="tg-c3ow">{{ rb_rr }}</td>
-                <td class="tg-c3ow">{{ br_rr }}</td>
-                <td class="tg-c3ow">{{ bb_rr }}</td>
+                <td class="tg-c3ow">22</td>
+                <td class="tg-c3ow">5</td>
+                <td class="tg-c3ow">6</td>
+                <td class="tg-c3ow">8</td>
               </tr>
             </tbody>
-            </table>
+        </table>
             <p>
                 NOTE: These numbers in the example summary tables above are for illustrative purposes and are not indicative of the actual numbers that will be presented.
             </p>
@@ -267,24 +267,120 @@
 
     <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
     <button class="nexttab btn-primary btn next">Next</button>
-      </div>
+  </div>
 
-      <div class="tab-pane" id="part6" role="tabpanel" aria-labelledby="part6-tab">
-
-
+  <div class="tab-pane" id="part6" role="tabpanel" aria-labelledby="part6-tab">
     <div class="card-header bg-transparent mainheader" >
      <h3 class="card-title font-weight-bold mt-3 mb-3"> Payment </h3>
-      </div>
+    </div>
     <br>
-
-
-        <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis et libero et viverra. Fusce et lorem tortor. Donec blandit eleifend auctor. Nulla sed metus sit amet augue mollis faucibus. Maecenas at consequat lorem, vel varius lectus. In at sem ac lectus mollis pulvinar nec feugiat neque. Integer vel tincidunt nunc, vehicula maximus orci.
+    <p>
+        Your payment will depend on two randomly selected guesses among all your guesses across the 60 rounds: one is selected among all your first guesses for each round (Guess 1) and the other is selected among all your second guesses for each round (Guess 2).
     </p>
+    <p>
+        This answer will be used to fill up the following list of questions:
+    </p>
+    <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-7btt">Q#</th>
+                <th class="tg-c3ow"></th>
+                <th class="tg-c3ow">Option A</th>
+                <th class="tg-c3ow"></th>
+                <th class="tg-c3ow">Option B</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-7btt">1</td>
+                <td class="tg-c3ow">Which would you choose:</td>
+                <td class="tg-c3ow"><strong>win $10 if assigned color is <span style="color:red";>Red</span></strong></td>
+                <td class="tg-c3ow">or</td>
+                <td class="tg-c3ow">win $10 with 1% chance</td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">2</td>
+                <td class="tg-c3ow">Which would you choose:</td>
+                <td class="tg-c3ow"><strong>win $10 if assigned color is <span style="color:red";>Red</span></strong></td>
+                <td class="tg-c3ow">or</td>
+                <td class="tg-c3ow">win $10 with 1% chance</td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">3</td>
+                <td class="tg-c3ow">Which would you choose:</td>
+                <td class="tg-c3ow"><strong>win $10 if assigned color is <span style="color:red";>Red</span></strong></td>
+                <td class="tg-c3ow">or</td>
+                <td class="tg-c3ow">win $10 with 3% chance</td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">&#8942</td>
+                <td class="tg-c3ow">&#8942</td>
+                <td class="tg-c3ow">&#8942</td>
+                <td class="tg-c3ow">&#8942</td>
+                <td class="tg-c3ow">&#8942</td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">x-1</td>
+                <td class="tg-c3ow">Which would you choose:</td>
+                <td class="tg-c3ow"><strong>win $10 if assigned color is <span style="color:red";>Red</span></strong></td>
+                <td class="tg-c3ow">or</td>
+                <td class="tg-c3ow">win $10 with (x-1)% chance</td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">x</td>
+                <td class="tg-c3ow">Which would you choose:</td>
+                <td class="tg-c3ow">win $10 if assigned color is <span style="color:red";>Red</span> </td>
+                <td class="tg-c3ow">or</td>
+                  <td class="tg-c3ow"><strong>win $10 with x% chance</strong></td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">&#8942</td>
+                <td class="tg-c3ow">&#8942</td>
+                <td class="tg-c3ow">&#8942</td>
+                <td class="tg-c3ow">&#8942</td>
+                <td class="tg-c3ow">&#8942</td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">98</td>
+                <td class="tg-c3ow">Which would you choose:</td>
+                <td class="tg-c3ow">win $10 if assigned color is <span style="color:red";>Red</span> </td>
+                <td class="tg-c3ow">or</td>
+                <td class="tg-c3ow"><strong>win $10 with 98% chance</strong></td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">99</td>
+                <td class="tg-c3ow">Which would you choose:</td>
+                <td class="tg-c3ow">win $10 if assigned color is <span style="color:red";>Red</span> </td>
+                <td class="tg-c3ow">or</td>
+                <td class="tg-c3ow"><strong>win $10 with 99% chance</strong></td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">100</td>
+                <td class="tg-c3ow">Which would you choose:</td>
+                <td class="tg-c3ow">win $10 if assigned color is <span style="color:red";>Red</span> </td>
+                <td class="tg-c3ow">or</td>
+                <td class="tg-c3ow"><strong>win $10 with 100% chance</strong></td>
+              </tr>
+            </tbody>
+    </table>
 
-        <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
+    <p>
+        Suppose that you stated that there is x% chance that the assigned color is Red from the selected Guess 1. Then, we will fill up the list of questions for your by choosing Option A for all questions from Q1 to Qx-1 and Option B for all question from Qx onwards.
+    </p>
+    <p>
+        We will randomly choose one of the questions (with equal chance) and pay you according to the answer for that question. Notice that there is no incentive to lie about the switch point Qx since you may get an option that you prefer less.
+    </p>
+    <p>
+        This is similarly done for the payment from randomly selected Guess 2. Your total earnings at the end of the experiment is calculated as follows:
+    </p>
+    <p>
+        Your total earnings = $2 show-up fee + earnings from a randomly selected Guess 1 + earnings from a randomly selected Guess 2.
+    </p>
+    <p><strong> Note: The payment scheme is designed in a way to ensure that the best way to maximize your earnings is to report your true guess for the probability. For example, for guesses about the probability of your assigned color being red, you maximize your earnings by reporting your true beliefs for all rounds.
+    </strong></p>
+    <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
     <button class="nexttab btn-primary btn next">Next</button>
-      </div>
+  </div>
 
 
 </div>
