@@ -6,6 +6,7 @@ SESSION_CONFIGS = [
        display_name="Belief updating",
        num_demo_participants=1,
        app_sequence=['consent',
+                     'instructions',
                      'block1',
                      'payment']
     ),
