@@ -280,7 +280,18 @@
         Your payment will depend on two randomly selected guesses among all your guesses across the 60 rounds: one is selected among all your first guesses for each round (Guess 1) and the other is selected among all your second guesses for each round (Guess 2).
     </p>
     <p>
-        This answer will be used to fill up the following list of questions:
+        The guess will be used to fill up the following list of 100 questions:
+    </p>
+    <p>
+        <strong>Question #n</strong> Which would you choose:
+        <ul>
+            <li><i>Option A</i> win $10 if assigned color is Red</li>
+            <li><i>Option B</i> win $10 with n% chance</li>
+        </ul>
+    </p>
+    <p> where Question #n goes from 1 to 100.</p>
+    <p>
+        Suppose that you stated that there is 75% chance that the assigned color is Red from the selected Guess 1. Then, we will fill up the list of questions for your by choosing Option A for all questions from Q1 to Q74 and Option B for all question from Q75 onwards.
     </p>
     <table class="tg">
             <thead>
@@ -322,18 +333,18 @@
                 <td class="tg-c3ow">&#8942</td>
               </tr>
               <tr>
-                <td class="tg-7btt">x-1</td>
+                <td class="tg-7btt">74</td>
                 <td class="tg-c3ow">Which would you choose:</td>
                 <td class="tg-c3ow"><strong>win $10 if assigned color is <span style="color:red">Red</span></strong></td>
                 <td class="tg-c3ow">or</td>
-                <td class="tg-c3ow">win $10 with (x-1)% chance</td>
+                <td class="tg-c3ow">win $10 with 74% chance</td>
               </tr>
               <tr>
-                <td class="tg-7btt">x</td>
+                <td class="tg-7btt">75</td>
                 <td class="tg-c3ow">Which would you choose:</td>
                 <td class="tg-c3ow">win $10 if assigned color is <span style="color:red">Red</span> </td>
                 <td class="tg-c3ow">or</td>
-                  <td class="tg-c3ow"><strong>win $10 with x% chance</strong></td>
+                  <td class="tg-c3ow"><strong>win $10 with 75% chance</strong></td>
               </tr>
               <tr>
                 <td class="tg-7btt">&#8942</td>
@@ -366,9 +377,6 @@
             </tbody>
     </table>
 
-    <p>
-        Suppose that you stated that there is x% chance that the assigned color is Red from the selected Guess 1. Then, we will fill up the list of questions for your by choosing Option A for all questions from Q1 to Qx-1 and Option B for all question from Qx onwards.
-    </p>
     <p>
         We will randomly choose one of the questions (with equal chance) and pay you according to the answer for that question. Notice that there is no incentive to lie about the switch point Qx since you may get an option that you prefer less.
     </p>
