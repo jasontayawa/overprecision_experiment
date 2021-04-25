@@ -30,7 +30,7 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'block1'
     players_per_group = None
-    num_rounds = 1#60
+    num_rounds = 30#60
 
 
 class Subsession(BaseSubsession):
@@ -272,59 +272,60 @@ class Subsession(BaseSubsession):
             'Color']
 
 class Group(BaseGroup):
-    def profit_calculation(self):
-        for p in self.get_players():
-            p.random_round1 = 1#random.randint(1, 60)
-            p.random_round2 = 1#random.randint(1, 60)
-            player_in_round1 = p.in_round(p.random_round1)
-            player_in_round2 = p.in_round(p.random_round2)
-
-            # Logging in the vars for the random rounds
-            p.color_random_round1 = player_in_round1.color
-            p.signal1_random_round1 = player_in_round1.signal1
-            p.signal2_random_round1 = player_in_round1.signal2
-            p.signal3_random_round1 = player_in_round1.signal3
-            p.signal4_random_round1 = player_in_round1.signal4
-            p.guess1_random_round1 = player_in_round1.guess1
-
-            p.color_random_round2 = player_in_round2.color
-            p.signal1_random_round2 = player_in_round2.signal1
-            p.signal2_random_round2 = player_in_round2.signal2
-            p.signal3_random_round2 = player_in_round2.signal3
-            p.signal4_random_round2 = player_in_round2.signal4
-            p.guess2_random_round2 = player_in_round2.guess2
-
-            # random number
-            p.y1 = random.randint(0, 100)
-            p.y2 = random.randint(0, 100)
-
-            p.x1 = random.randint(0, 100)
-            p.x2 = random.randint(0, 100)
-
-            # BDM payment
-            if p.guess1_random_round1 >= p.y1:
-                if p.color_random_round1 == 1:
-                    p.profit_guess1 = 10
-                else:
-                    p.profit_guess1 = 0
-            else:
-                if p.x1 <= p.y1:
-                    p.profit_guess1 = 10
-                else:
-                    p.profit_guess1 = 0
-
-            if p.guess2_random_round2 >= p.y2:
-                if p.color_random_round2 == 1:
-                    p.profit_guess2 = 10
-                else:
-                    p.profit_guess2 = 0
-            else:
-                if p.x2 <= p.y2:
-                    p.profit_guess2 = 10
-                else:
-                    p.profit_guess2 = 0
-
-            p.payoff = p.profit_guess1 + p.profit_guess2
+    pass
+    # def profit_calculation(self):
+    #     for p in self.get_players():
+    #         p.random_round1 = 1#random.randint(1, 30)#random.randint(1, 60)
+    #         p.random_round2 = 1#random.randint(1, 30)#random.randint(1, 60)
+    #         player_in_round1 = p.in_round(p.random_round1)
+    #         player_in_round2 = p.in_round(p.random_round2)
+    #
+    #         # Logging in the vars for the random rounds
+    #         p.color_random_round1 = player_in_round1.color
+    #         p.signal1_random_round1 = player_in_round1.signal1
+    #         p.signal2_random_round1 = player_in_round1.signal2
+    #         p.signal3_random_round1 = player_in_round1.signal3
+    #         p.signal4_random_round1 = player_in_round1.signal4
+    #         p.guess1_random_round1 = player_in_round1.guess1
+    #
+    #         p.color_random_round2 = player_in_round2.color
+    #         p.signal1_random_round2 = player_in_round2.signal1
+    #         p.signal2_random_round2 = player_in_round2.signal2
+    #         p.signal3_random_round2 = player_in_round2.signal3
+    #         p.signal4_random_round2 = player_in_round2.signal4
+    #         p.guess2_random_round2 = player_in_round2.guess2
+    #
+    #         # random number
+    #         p.y1 = random.randint(0, 100)
+    #         p.y2 = random.randint(0, 100)
+    #
+    #         p.x1 = random.randint(0, 100)
+    #         p.x2 = random.randint(0, 100)
+    #
+    #         # BDM payment
+    #         if p.guess1_random_round1 >= p.y1:
+    #             if p.color_random_round1 == 1:
+    #                 p.profit_guess1 = 10
+    #             else:
+    #                 p.profit_guess1 = 0
+    #         else:
+    #             if p.x1 <= p.y1:
+    #                 p.profit_guess1 = 10
+    #             else:
+    #                 p.profit_guess1 = 0
+    #
+    #         if p.guess2_random_round2 >= p.y2:
+    #             if p.color_random_round2 == 1:
+    #                 p.profit_guess2 = 10
+    #             else:
+    #                 p.profit_guess2 = 0
+    #         else:
+    #             if p.x2 <= p.y2:
+    #                 p.profit_guess2 = 10
+    #             else:
+    #                 p.profit_guess2 = 0
+    #
+    #         p.payoff = p.profit_guess1 + p.profit_guess2
 
 
 class Player(BasePlayer):

@@ -3,7 +3,7 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 import pandas as pd
-
+import random
 
 class Guess1(Page):
     form_model = 'player'
@@ -11,7 +11,6 @@ class Guess1(Page):
                    'check_slider_one']
 
     def error_message(self, values):
-        print('values is', values)
         if values['check_slider_one'] == None:
             return 'Please use the slider to make a decision.'
 
@@ -84,7 +83,6 @@ class Guess2(Page):
     form_fields = ['guess2', 'check_slider_two']
 
     def error_message(self, values):
-        print('values is', values)
         if values['check_slider_two'] == None:
             return 'Please use the slider to make a decision.'
 
@@ -278,20 +276,72 @@ class Guess2(Page):
             bb_bb = bb_bb,
         )
 
-class ResultsWaitPage(WaitPage):
-
-    body_text = 'Please wait while we determine your final payoff.'
-    def is_displayed(self):
-        return self.round_number == Constants.num_rounds
-
-    after_all_players_arrive = 'profit_calculation'
-
+# class ResultsWaitPage(WaitPage):
+#
+#     body_text = 'Please wait while we determine your final payoff.'
+#     def is_displayed(self):
+#         return self.round_number == Constants.num_rounds
+#
+#     after_all_players_arrive = 'profit_calculation'
 
 class Results(Page):
     def is_displayed(self):
         return self.round_number == Constants.num_rounds
 
     def vars_for_template(self):
+
+        self.player.random_round1 = random.randint(1, 30)#random.randint(1, 60)
+        self.player.random_round2 = random.randint(1, 30)#random.randint(1, 60)
+        player_in_round1 = self.player.in_round(self.player.random_round1)
+        player_in_round2 = self.player.in_round(self.player.random_round2)
+
+        # Logging in the vars for the random rounds
+        self.player.color_random_round1 = player_in_round1.color
+        self.player.signal1_random_round1 = player_in_round1.signal1
+        self.player.signal2_random_round1 = player_in_round1.signal2
+        self.player.signal3_random_round1 = player_in_round1.signal3
+        self.player.signal4_random_round1 = player_in_round1.signal4
+        self.player.guess1_random_round1 = player_in_round1.guess1
+
+        self.player.color_random_round2 = player_in_round2.color
+        self.player.signal1_random_round2 = player_in_round2.signal1
+        self.player.signal2_random_round2 = player_in_round2.signal2
+        self.player.signal3_random_round2 = player_in_round2.signal3
+        self.player.signal4_random_round2 = player_in_round2.signal4
+        self.player.guess2_random_round2 = player_in_round2.guess2
+
+        # random number
+        self.player.y1 = random.randint(0, 100)
+        self.player.y2 = random.randint(0, 100)
+
+        self.player.x1 = random.randint(0, 100)
+        self.player.x2 = random.randint(0, 100)
+
+        # BDM payment
+        if self.player.guess1_random_round1 >= self.player.y1:
+            if self.player.color_random_round1 == 1:
+                self.player.profit_guess1 = 10
+            else:
+                self.player.profit_guess1 = 0
+        else:
+            if self.player.x1 <= self.player.y1:
+                self.player.profit_guess1 = 10
+            else:
+                self.player.profit_guess1 = 0
+
+        if self.player.guess2_random_round2 >= self.player.y2:
+            if self.player.color_random_round2 == 1:
+                self.player.profit_guess2 = 10
+            else:
+                self.player.profit_guess2 = 0
+        else:
+            if self.player.x2 <= self.player.y2:
+                self.player.profit_guess2 = 10
+            else:
+                self.player.profit_guess2 = 0
+
+        self.player.payoff = self.player.profit_guess1 + self.player.profit_guess2
+
         guess1_random_y = self.player.y1
         guess1_random_x = self.player.x1
         guess2_random_y = self.player.y2
@@ -333,4 +383,4 @@ class Results(Page):
 
 
 
-page_sequence = [Guess1, Guess2, ResultsWaitPage, Results]
+page_sequence = [Guess1, Guess2, Results]
