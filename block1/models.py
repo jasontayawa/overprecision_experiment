@@ -30,7 +30,7 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'block1'
     players_per_group = None
-    num_rounds = 30#60
+    num_rounds = 21#60
 
 
 class Subsession(BaseSubsession):
@@ -329,16 +329,6 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    # guess1 = models.IntegerField(initial=50,
-    #                            min=0,
-    #                            max=100,
-    #                            label="Guess 1: What do you is the chance that the assigned color for the round is Red?",
-    #                            widget=widgets.Slider)
-    # guess2 = models.IntegerField(initial=50,
-    #                            min=0,
-    #                            max=100,
-    #                            label="Guess 2: What do you is the chance that the assigned color for the round is Red?",
-    #                            widget=widgets.Slider)
     guess1 = models.IntegerField()
     check_slider_one = models.IntegerField()
     guess2 = models.IntegerField()
@@ -375,6 +365,13 @@ class Player(BasePlayer):
     guess2_random_round2 = models.IntegerField()
     y2 = models.IntegerField()
     x2 = models.IntegerField()
+
+    # selected_round_guess1 = models.IntegerField()
+    # selected_round_guess2 = models.IntegerField()
+    # color_guess1 = models.IntegerField()
+    # guess1 = models.IntegerField()
+    # color_guess2 = models.IntegerField()
+    # guess2 = models.IntegerField()
 
 
 
