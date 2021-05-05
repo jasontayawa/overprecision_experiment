@@ -276,39 +276,31 @@ class Guess2(Page):
             bb_bb = bb_bb,
         )
 
-# class ResultsWaitPage(WaitPage):
-#
-#     body_text = 'Please wait while we determine your final payoff.'
-#     def is_displayed(self):
-#         return self.round_number == Constants.num_rounds
-#
-#     after_all_players_arrive = 'profit_calculation'
+class Payment_Calculation(Page):
 
-class Results(Page):
     def is_displayed(self):
         return self.round_number == Constants.num_rounds
 
     def vars_for_template(self):
-
-        self.player.random_round1 = random.randint(1, 30)#random.randint(1, 60)
-        self.player.random_round2 = random.randint(1, 30)#random.randint(1, 60)
+        self.player.random_round1 = random.randint(1, 21)  # random.randint(1, 60)
+        self.player.random_round2 = random.randint(1, 21)  # random.randint(1, 60)
         player_in_round1 = self.player.in_round(self.player.random_round1)
         player_in_round2 = self.player.in_round(self.player.random_round2)
 
         # Logging in the vars for the random rounds
         self.player.color_random_round1 = player_in_round1.color
-        self.player.signal1_random_round1 = player_in_round1.signal1
-        self.player.signal2_random_round1 = player_in_round1.signal2
-        self.player.signal3_random_round1 = player_in_round1.signal3
-        self.player.signal4_random_round1 = player_in_round1.signal4
         self.player.guess1_random_round1 = player_in_round1.guess1
 
         self.player.color_random_round2 = player_in_round2.color
-        self.player.signal1_random_round2 = player_in_round2.signal1
-        self.player.signal2_random_round2 = player_in_round2.signal2
-        self.player.signal3_random_round2 = player_in_round2.signal3
-        self.player.signal4_random_round2 = player_in_round2.signal4
         self.player.guess2_random_round2 = player_in_round2.guess2
+
+        selected_round_guess1 = self.player.random_round1
+        color_guess1 = self.player.color_random_round1
+        guess1 = self.player.guess1_random_round1
+
+        selected_round_guess2 = self.player.random_round2
+        color_guess2 = self.player.color_random_round2
+        guess2 = self.player.guess2_random_round2
 
         # random number
         self.player.y1 = random.randint(0, 100)
@@ -342,11 +334,32 @@ class Results(Page):
 
         self.player.payoff = self.player.profit_guess1 + self.player.profit_guess2
 
-        guess1_random_y = self.player.y1
-        guess1_random_x = self.player.x1
-        guess2_random_y = self.player.y2
-        guess2_random_x = self.player.x2
+        payment = self.participant.payoff
 
+        return dict(
+            random_round1= self.player.random_round1,
+            random_round2 = self.player.random_round2,
+            selected_round_guess1=selected_round_guess1,
+            color_guess1=color_guess1,
+            guess1=guess1,
+            selected_round_guess2=selected_round_guess2,
+            color_guess2=color_guess2,
+            guess2=guess2,
+            payment=payment,
+            y1=self.player.y1,
+            y2=self.player.y2,
+            x1=self.player.x1,
+            x2=self.player.x2,
+
+        )
+
+
+
+class Results(Page):
+    def is_displayed(self):
+        return self.round_number == Constants.num_rounds
+
+    def vars_for_template(self):
         selected_round_guess1 = self.player.random_round1
         color_guess1 = self.player.color_random_round1
         guess1 = self.player.guess1_random_round1
@@ -363,13 +376,9 @@ class Results(Page):
         x2 = self.player.x2
 
         return dict(
-            guess1_random_y=guess1_random_y,
-            guess1_random_x=guess1_random_x,
             selected_round_guess1=selected_round_guess1,
             color_guess1=color_guess1,
             guess1=guess1,
-            guess2_random_y=guess2_random_y,
-            guess2_random_x=guess2_random_x,
             selected_round_guess2=selected_round_guess2,
             color_guess2=color_guess2,
             guess2=guess2,
@@ -380,7 +389,14 @@ class Results(Page):
             x2=x2,
 
         )
+class Block2(Page):
+    def is_displayed(self):
+        return self.round_number == 8
+
+class Block3(Page):
+    def is_displayed(self):
+        return self.round_number == 15
 
 
 
-page_sequence = [Guess1, Guess2, Results]
+page_sequence = [Block2, Block3, Guess1, Guess2, Payment_Calculation, Results]

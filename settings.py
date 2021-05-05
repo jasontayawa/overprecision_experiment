@@ -1,12 +1,12 @@
 from os import environ
 
+#add 'consent' app in the app sequence for the real experiment
 SESSION_CONFIGS = [
     dict(
        name='overprecision',
        display_name="Belief updating",
        num_demo_participants=1,
-       app_sequence=['consent',
-                     'instructions',
+       app_sequence=['instructions',
                      'block1',
                      'payment']
     ),
