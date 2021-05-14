@@ -9,6 +9,7 @@ SESSION_CONFIGS = [
        app_sequence=['consent',
                      'instructions',
                      'block1',
+                     'questionnaire',
                      'payment',]
     ),
 ]
