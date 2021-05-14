@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-    <p> Round {{ selected_round_guess1 }} is selected for your Guess 1 payment. </p>
+    <p> <strong>Round {{ selected_round_guess1 }}</strong> is selected for your Guess 1 payment. </p>
     {% if color_guess1 == 1 %}
         <p> The color assigned for the Round {{ selected_round_guess1 }} is <span style="color:red";>Red</span> </p>
     {% elif color_guess1 == 0 %}
@@ -14,19 +14,19 @@
     {% endif %}
     {% if guess1 >= y1 and color_guess1 == 1  %}
 {#        <p> Your guess was {{ guess1 }} which is greater than the randomly selected number {{ y1 }}. Since the assigned color is <span style="color:red";>Red</span>, you got $10.</p>#}
-        <p> Your guess for the round is {{ guess1 }}% and the randomly selected question is Q{{ y1 }}. Hence, Option A is taken: win $10 if assigned color is <span style="color:red";>Red</span>. Since the assigned color is <span style="color:red";>Red</span>, you got $10.</p>
+        <p> Your Guess 1 for the round is {{ guess1 }}% and the randomly selected question is Q{{ y1 }}. Hence, Option A is taken: win $10 if assigned color is <span style="color:red";>Red</span>. Since the assigned color is <span style="color:red";>Red</span>, you got $10.</p>
     {% elif guess1 >= y1 and color_guess1 == 0  %}
 {#        <p> Your guess was {{ guess1 }} which is greater than the randomly selected number {{ y1 }}. Since the assigned color is <span style="color:blue";>Blue</span>, you got $0.</p>#}
-        <p> Your guess for the round is {{ guess1 }}% and the randomly selected question is Q{{ y1 }}. Hence, Option A is taken: win $10 if assigned color is <span style="color:red";>Red</span>. Since the assigned color is <span style="color:blue";>Blue</span>, you got $0.</p>
+        <p> Your Guess 1 for the round is {{ guess1 }}% and the randomly selected question is Q{{ y1 }}. Hence, Option A is taken: win $10 if assigned color is <span style="color:red";>Red</span>. Since the assigned color is <span style="color:blue";>Blue</span>, you got $0.</p>
     {% elif guess1 < y1 and x1 <= y1 %}
 {#        <p> Your guess was {{ guess1 }} which is less than the randomly selected number {{ y1 }}. From a lottery with {{ y1 }}% of getting $10, you got $10. </p>#}
-        <p> Your guess for the round is {{ guess1 }}% and the randomly selected question is Q{{ y1 }}. Hence, Option B is taken: win $10 with {{ y1 }}%% chance. From a lottery with {{ y1 }}% of getting $10, you got $10. </p>
+        <p> Your Guess 1 for the round is {{ guess1 }}% and the randomly selected question is Q{{ y1 }}. Hence, Option B is taken: win $10 with {{ y1 }}% chance. From a lottery with {{ y1 }}% of getting $10, you got $10. </p>
     {% elif guess1 < y1 and x1 > y1 %}
 {#        <p> Your guess was {{ guess1 }} which is less than the randomly selected number {{ y1 }}. From a lottery with {{ y1 }}% of getting $10, you got $0. </p>#}
-        <p> Your guess for the round is {{ guess1 }}% and the randomly selected question is Q{{ y1 }}. Hence, Option B is taken: win $10 with {{ y1 }}%% chance. From a lottery with {{ y1 }}% of getting $10, you got $0. </p>
+        <p> Your Guess 1 for the round is {{ guess1 }}% and the randomly selected question is Q{{ y1 }}. Hence, Option B is taken: win $10 with {{ y1 }}% chance. From a lottery with {{ y1 }}% of getting $10, you got $0. </p>
     {% endif %}
     <br>
-    <p> Round {{ selected_round_guess2 }} is selected for your Guess 2 payment. </p>
+    <p> <strong>Round {{ selected_round_guess2 }}</strong> is selected for your Guess 2 payment. </p>
     {% if color_guess2 == 1 %}
         <p> The color assigned for the Round {{ selected_round_guess2 }} is <span style="color:red";>Red</span> </p>
     {% elif color_guess2 == 0 %}
@@ -34,22 +34,22 @@
     {% endif %}
     {% if guess2 >= y2 and color_guess2 == 1  %}
 {#        <p> Your guess was {{ guess2 }} which is greater than the randomly selected number {{ y2 }}. Since the assigned color is <span style="color:red";>Red</span>, you got $10.</p>#}
-        <p> Your guess for the round is {{ guess2 }}% and the randomly selected question is Q{{ y2 }}. Hence, Option A is taken: win $10 if assigned color is <span style="color:red";>Red</span>. Since the assigned color is <span style="color:red";>Red</span>, you got $10.</p>
+        <p> Your Guess 2 for the round is {{ guess2 }}% and the randomly selected question is Q{{ y2 }}. Hence, Option A is taken: win $10 if assigned color is <span style="color:red";>Red</span>. Since the assigned color is <span style="color:red";>Red</span>, you got $10.</p>
     {% elif guess2 >= y2 and color_guess2 == 0  %}
 {#        <p> Your guess was {{ guess2 }} which is greater than the randomly selected number {{ y2 }}. Since the assigned color is <span style="color:blue";>Blue</span>, you got $0.</p>#}
-        <p> Your guess for the round is {{ guess2 }}% and the randomly selected question is Q{{ y2 }}. Hence, Option A is taken: win $10 if assigned color is <span style="color:red";>Red</span>. Since the assigned color is <span style="color:blue";>Blue</span>, you got $0.</p>
+        <p> Your Guess 2 for the round is {{ guess2 }}% and the randomly selected question is Q{{ y2 }}. Hence, Option A is taken: win $10 if assigned color is <span style="color:red";>Red</span>. Since the assigned color is <span style="color:blue";>Blue</span>, you got $0.</p>
     {% elif guess2 < y2 and x2 <= y2 %}
 {#        <p> Your guess was {{ guess2 }} which is less than the randomly selected number {{ y2 }}. From a lottery with {{ y2 }}% of getting $10, you got $10. </p>#}
-        <p> Your guess for the round is {{ guess2 }}% and the randomly selected question is Q{{ y2 }}. Hence, Option B is taken: win $10 with {{ y2 }}%% chance. From a lottery with {{ y2 }}% of getting $10, you got $10. </p>
+        <p> Your Guess 2 for the round is {{ guess2 }}% and the randomly selected question is Q{{ y2 }}. Hence, Option B is taken: win $10 with {{ y2 }}% chance. From a lottery with {{ y2 }}% of getting $10, you got $10. </p>
     {% elif guess2 < y2 and x2 > y2 %}
 {#        <p> Your guess was {{ guess2 }} which is less than the randomly selected number {{ y2 }}. From a lottery with {{ y2 }}% of getting $10, you got $0. </p>#}
-        <p> Your guess for the round is {{ guess2 }}% and the randomly selected question is Q{{ y2 }}. Hence, Option B is taken: win $10 with {{ y2 }}%% chance. From a lottery with {{ y2 }}% of getting $10, you got $0. </p>
+        <p> Your Guess 2 for the round is {{ guess2 }}% and the randomly selected question is Q{{ y2 }}. Hence, Option B is taken: win $10 with {{ y2 }}% chance. From a lottery with {{ y2 }}% of getting $10, you got $0. </p>
     {% else %}
         {{ guess2 }} and {{ y2 }} and {{ x2 }} {{ color_guess1 }}
     {% endif %}
     <br>
     <p> Your total payment including the participation fee is {{ participant.payoff_plus_participation_fee }}</p>
-{#    {% next_button %}#}
+    {% next_button %}
 {% endblock %}
 
 

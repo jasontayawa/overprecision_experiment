@@ -14,7 +14,7 @@
             width: 10px !important;
             border-radius: 0px !important;
             background: #ffffff !important;
-            cursor: pointer !important !important;
+            cursor: pointer !important;
             -webkit-appearance: none !important;
             margin-top: -7px !important;
         }
@@ -93,14 +93,14 @@
         <thead>
           <tr>
             <th class="tg-7btt">Signals (1, 2, 3) &#x2192;</th>
-            <th class="tg-c3ow">(<span style="color:red";>r</span>,<span style="color:red";>r</span>,<span style="color:red";>r</span>)</th>
-            <th class="tg-c3ow">(<span style="color:red";>r</span>,<span style="color:red";>r</span>,<span style="color:blue";>b</span>)</th>
-            <th class="tg-c3ow">(<span style="color:red";>r</span>,<span style="color:blue";>b</span>,<span style="color:red";>r</span>)</th>
-            <th class="tg-c3ow">(<span style="color:blue";>b</span>,<span style="color:red";>r</span>,<span style="color:red";>r</span>)</th>
-            <th class="tg-c3ow">(<span style="color:red";>r</span>,<span style="color:blue";>b</span>,<span style="color:blue";>b</span>)</th>
-            <th class="tg-c3ow">(<span style="color:blue";>b</span>,<span style="color:red";>r</span>,<span style="color:blue";>b</span>)</th>
-            <th class="tg-c3ow">(<span style="color:blue";>b</span>,<span style="color:blue";>b</span>,<span style="color:red";>r</span>)</th>
-            <th class="tg-c3ow">(<span style="color:blue";>b</span>,<span style="color:blue";>b</span>,<span style="color:blue";>b</span>)</th>
+            <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>)</th>
+            <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>)</th>
+            <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>)</th>
+            <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>)</th>
+            <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>)</th>
+            <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>)</th>
+            <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>)</th>
+            <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>)</th>
           </tr>
         </thead>
         <tbody>
@@ -437,9 +437,11 @@
     </div>
     <br>
     <h5>
-        Reference for signals
+        Reference for Signals
     </h5>
-    <img src="{% static 'robots_in_round.png'%}" alt="signal graph" height="300"/>
+    <img src="{% static 'RobotXYZ_in_round.png'%}" alt="signal graph" height="300"/>
+
+    <img src="{% static 'RobotW_in_round.png'%}" alt="signal graph" height="300"/>
 
 {% endblock %}
 

@@ -6,9 +6,10 @@ SESSION_CONFIGS = [
        name='overprecision',
        display_name="Belief updating",
        num_demo_participants=1,
-       app_sequence=['instructions',
+       app_sequence=['consent',
+                     'instructions',
                      'block1',
-                     'payment']
+                     'payment',]
     ),
 ]
 
