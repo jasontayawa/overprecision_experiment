@@ -11,6 +11,18 @@ SESSION_CONFIGS = [
                      'block1',
                      'questionnaire',
                      'payment',]
+    # ),
+    # dict(
+    #    name='questionnaire',
+    #    display_name="questionnaire",
+    #    num_demo_participants=1,
+    #    app_sequence=['questionnaire',]
+    # ),
+    # dict(
+    #    name='rounds',
+    #    display_name="rounds",
+    #    num_demo_participants=1,
+    #    app_sequence=['block1',]
     ),
 ]
 
