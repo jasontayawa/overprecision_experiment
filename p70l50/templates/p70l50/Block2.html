@@ -1,0 +1,86 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Start of Block 2
+{% endblock %}
+
+{% block content %}
+    <p>
+      You are now in Block 2. You will be provided with a summary table along with the first three signals generated for the round. This summary table will consist of 3000 simulated rounds that show the assigned color and the first three signals for those rounds. These rounds will be simulated from the same procedure that generated the 20 rounds you have faced in Block 1.
+    </p>
+    <br>
+    <p>
+        The following table is an <em>example</em> of the first summary table that will be presented. It summarizes the assigned color and first three signals for 200 simulated rounds.
+    </p>
+
+      <table class="tg">
+        <thead>
+          <tr>
+            <th class="tg-7btt">Signals (1, 2, 3) &#x2192;</th>
+            <th class="tg-c3ow">(<span style="color:red">red</span>,<span style="color:red">red</span>,<span style="color:red">red</span>)</th>
+            <th class="tg-c3ow">(<span style="color:red">red</span>,<span style="color:red">red</span>,<span style="color:blue">blue</span>)</th>
+            <th class="tg-c3ow">(<span style="color:red">red</span>,<span style="color:blue">blue</span>,<span style="color:red">red</span>)</th>
+            <th class="tg-c3ow">(<span style="color:blue">blue</span>,<span style="color:red">red</span>,<span style="color:red">red</span>)</th>
+            <th class="tg-c3ow">(<span style="color:red">red</span>,<span style="color:blue">blue</span>,<span style="color:blue">blue</span>)</th>
+            <th class="tg-c3ow">(<span style="color:blue">blue</span>,<span style="color:red">red</span>,<span style="color:blue">blue</span>)</th>
+            <th class="tg-c3ow">(<span style="color:blue">blue</span>,<span style="color:blue">blue</span>,<span style="color:red">red</span>)</th>
+            <th class="tg-c3ow">(<span style="color:blue">blue</span>,<span style="color:blue">blue</span>,<span style="color:blue">blue</span>)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tg-7btt">Color <span style="color:red">Red</span></td>
+            <td class="tg-c3ow">17</td>
+            <td class="tg-c3ow">13</td>
+            <td class="tg-c3ow">14</td>
+            <td class="tg-c3ow">13</td>
+            <td class="tg-c3ow">12</td>
+            <td class="tg-c3ow">11</td>
+            <td class="tg-c3ow">11</td>
+            <td class="tg-c3ow">9</td>
+          </tr>
+          <tr>
+            <td class="tg-7btt">Color <span style="color:blue">Blue</span></td>
+            <td class="tg-c3ow">10</td>
+            <td class="tg-c3ow">11</td>
+            <td class="tg-c3ow">11</td>
+            <td class="tg-c3ow">10</td>
+            <td class="tg-c3ow">13</td>
+            <td class="tg-c3ow">14</td>
+            <td class="tg-c3ow">14</td>
+            <td class="tg-c3ow">17</td>
+          </tr>
+          <tr>
+            <td class="tg-7btt"> Signal Total </td>
+            <td class="tg-c3ow">27</td>
+            <td class="tg-c3ow">24</td>
+            <td class="tg-c3ow">25</td>
+            <td class="tg-c3ow">23</td>
+            <td class="tg-c3ow">25</td>
+            <td class="tg-c3ow">25</td>
+            <td class="tg-c3ow">25</td>
+            <td class="tg-c3ow">26</td>
+          </tr>
+        </tbody>
+      </table>
+    <br>
+    <p>
+        <em>NOTE: These numbers in the example summary table above are for illustrative purposes and are not indicative of the actual numbers that will be presented.</em>
+    </p>
+    <p><strong>Please click Next to continue with the experiment.</strong></p>
+    {% next_button %}
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0; margin-left: auto;margin-right: auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+
+</style>
+{% endblock %}
+
+

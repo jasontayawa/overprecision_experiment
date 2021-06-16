@@ -3,27 +3,31 @@ from os import environ
 #add 'consent' app in the app sequence for the real experiment
 SESSION_CONFIGS = [
     dict(
-       name='overprecision',
-       display_name="Belief updating",
+       name='p55l50',
+       display_name="Belief updating 1",
        num_demo_participants=1,
        app_sequence=['consent',
-                     'instructions',
-                     'block1',
-                     'questionnaire',
+                     'instructions_p55l50',
+                     'p55l50',
+                     'questionnaire_p55l50',
                      'payment',]
-    # ),
-    # dict(
-    #    name='questionnaire',
-    #    display_name="questionnaire",
-    #    num_demo_participants=1,
-    #    app_sequence=['questionnaire',]
-    # ),
+    ),
+    dict(
+       name='p70l50',
+       display_name="Belief updating 2",
+       num_demo_participants=1,
+       app_sequence=['consent',
+                     'instructions_p70l50',
+                     'p70l50',
+                     'questionnaire_p70l50',
+                     'payment',]
+    ),
     # dict(
     #    name='rounds',
     #    display_name="rounds",
     #    num_demo_participants=1,
-    #    app_sequence=['block1',]
-    ),
+    #    app_sequence=['p55l50',]
+    # ),
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs

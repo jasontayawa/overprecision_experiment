@@ -1,0 +1,84 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Questionnaire - Part I
+{% endblock %}
+
+{% block content %}
+    <div class="grid-container">
+        <div class="info">
+            <p>The main part of the experiment has now finished.</p>
+            <p>Your total earnings for the experiment are {{ participant.payoff }}.</p>
+            <p>Your total earnings in dollars (not including the show-up-fee) are {{ final_dollar }}.</p>
+            <p>Before we end, we would like you to answer the following survey.</p>
+            <p><strong>Your answers to the following questions will have no effect on your earnings. These
+                responses will be kept anonymous and will only be used for research purposes.</strong></p>
+            <br>
+            <img src="{% static 'RobotXYZ_in_round_p70l50.png'%}" alt="signal graph" height="300"/>
+
+            <img src="{% static 'RobotW_in_round_p70l50.png'%}" alt="signal graph" height="300"/>
+            {% formfield player.decision1 %}
+            {% formfield player.decision2 %}
+            {% formfield player.decision3 %}
+            {% formfield player.understanding %}
+            {% formfield player.confusion %}
+        </div>
+        <div>
+            <p>Please click Next to continue with the Survey.</p>
+            {% next_button %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block styles %}
+<style type="text/css">
+        p {font-size: 18px; font-family: Veranda}
+        li {font-size: 18px; font-family: Veranda}
+        h2 {font-family: Veranda}
+        h3 {font-family: Veranda}
+        td {font-family: Veranda; font-size: 18px}
+        main {font-size: 18px; font-family: Veranda}
+        .button {background-color: #3166ff; padding: 8px 8px; border-radius: 4px;
+            border: none; color: white; text-align: center; font-size: 18px;
+            font-family: Veranda;}
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Veranda;font-size:18px;
+            overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Veranda;font-size:18px;
+        font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg .tg-ufqi{color:#0070C0;font-family:Veranda !important;;text-align:center;vertical-align:bottom}
+        .tg .tg-hsi4{color:#F00;font-family:Veranda !important;;text-align:left;vertical-align:bottom}
+        .tg .tg-v1cs{color:#0070C0;font-family:Veranda !important;;text-align:left;vertical-align:bottom}
+        .tg .tg-f1g4{color:#0070C0;font-family:Veranda !important;;text-align:center;vertical-align:middle}
+        .tg .tg-jycg{font-family:Veranda !important;;text-align:center;vertical-align:bottom}
+        .tg .tg-quw6{color:#F00;font-family:Veranda !important;;text-align:center;vertical-align:bottom}
+        .tg .tg-ei3b{color:#548235;font-family:Veranda !important;;text-align:center;vertical-align:middle}
+        .tg .tg-fjgv{color:#548235;font-family:Veranda !important;;text-align:left;vertical-align:bottom}
+        .tg .tg-z3sx{color:#548235;font-family:Veranda !important;;text-align:center;vertical-align:bottom}
+        .tg .tg-696k{color:#F00;font-family:Veranda !important;;text-align:center;vertical-align:middle}
+    </style>
+
+    <style type="text/css">
+        .otree-body {
+            max-width:1920px
+        }
+        .grid-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: 0.2fr 0.5fr 0.15fr;
+          gap: 2px 5px;
+          grid-template-areas:
+            "info info info"
+            "Decision1 Decision2 Decision3"
+            "info2 info2 info2";
+        }
+        .info { grid-area: info; }
+        .info2 { grid-area: info2; }
+        .Decision1 { grid-area: Decision1; }
+        .Decision2 { grid-area: Decision2; }
+        .Decision3 { grid-area: Decision3; }
+    </style>
+
+{% endblock %}
