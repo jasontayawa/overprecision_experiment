@@ -1,0 +1,339 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+   
+{% endblock %}
+
+{% block scripts %}
+
+<script src="{% static 'back_button_v1/js/prev_next_button.js' %}"></script>
+
+{% endblock %}
+
+
+{% block styles %}
+
+<link href="{% static 'back_button_v1/css/custom.css' %}" rel="stylesheet">
+
+{% endblock %}
+
+
+{% block content %}
+
+<!-- Tab navigation -->
+<ul class="nav nav-tabs   fixed-top navbar-light bg-light justify-content-center" id="myTab" role="tablist">
+  
+
+  <li class="nav-item">
+    <a class="nav-link active" id="part1-tab" data-toggle="tab" href="#part1" role="tab" aria-controls="part1" onclick="topFunction()"> Introduction </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" id="part2-tab" data-toggle="tab" href="#part2" role="tab" aria-controls="part2" onclick="topFunction()"> Rounds </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" id="part3-tab" data-toggle="tab" href="#part3" role="tab" aria-controls="part3" onclick="topFunction()"> Signals </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" id="part4-tab" data-toggle="tab" href="#part4" role="tab" aria-controls="part4" onclick="topFunction()"> Blocks </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" id="part5-tab" data-toggle="tab" href="#part5" role="tab" aria-controls="part5" onclick="topFunction()"> Summary </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" id="part6-tab" data-toggle="tab" href="#part6" role="tab" aria-controls="part6" onclick="topFunction()"> Payment </a>
+  </li>
+
+</ul>
+<br>
+<br>
+
+
+<!-- Tab content -->
+<div class="tab-content" id="myTabContent">
+
+  <div class="tab-pane show active" id="part1" role="tabpanel" aria-labelledby="part1-tab">
+
+    <div class="card-header bg-transparent mainheader" >
+     <h3 class="card-title font-weight-bold mt-3 mb-3"> Introduction </h3>
+    </div>
+    <p>
+        Welcome and thank you for taking part in this Economics Experiment. This experiment will last for around 60-90 minutes. If you read the instructions carefully, you can earn a considerable amount of money depending on your decisions and chance. Your earnings will be paid out to you in cash (Venmo) at the end of the experiment.
+    </p>
+    <p><i>
+        Before we begin, we ask that you turn off your cell phones for the duration of this experiment. We also ask that you do not communicate with anyone for the duration of this experiment and only use the software provided to you on your devices. Failure to comply with these rules may result in dismissal from this experiment and you will not be paid any earnings you may have otherwise received.
+    </i></p>
+    <h3>Overview</h3>
+    <p>
+        This experiment consists of <strong>60 rounds</strong> of repeated tasks administered in <strong>three 20-round blocks</strong>. You will be compensated based on a randomly selected belief you reported across all rounds.    </p>
+
+    <button onclick="topFunction()" type="button" class="nexttab btn-primary btn next">Next</button>
+  </div>
+
+
+  <div class="tab-pane" id="part2" role="tabpanel" aria-labelledby="part2-tab">
+
+    <div class="card-header bg-transparent mainheader" >
+     <h3 class="card-title font-weight-bold mt-3 mb-3"> Rounds </h3>
+    </div>
+    <img src="{% static 'rounds.png' %}" alt="rounds graph"/>
+    <p>
+        In each round, you will be assigned a color: Red or Blue. Each color is equally likely to be assigned for a round (50-50 chance). Note that the color in each round will be chosen independently of the colors in other rounds.
+    </p>
+    <p>
+        Your task is to guess the chance that the color assigned to you is Red. In particular, for each round you will make two guesses for the question:
+    </p>
+    <p><strong> What do you think is the chance (0-100)% that the color assigned for the round is Red?
+    </strong></p>
+    <p>
+        You are given 4 signals to help you guess. These signals will come from four distinct robots (more on that later).
+    </p>
+
+    <p>The timeline for each set of guesses in a round is as follows
+        <ol>
+            <li>You will receive 3 signals.</li>
+            <li>Then, you will make your first guess (Guess 1) about the chance that the color assigned to you is red based on those 3 signals.</li>
+            <li>You will receive a 4th signal. </li>
+            <li>Then, you will make your second guess (Guess 2) about the chance that the color assigned to you is Red based on all the 4 signals given.</li>
+        </ol>
+    </p>
+
+    <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
+    <button onclick="topFunction()" type="button" class="nexttab btn-primary btn next">Next</button>
+  </div>
+
+  <div class="tab-pane" id="part3" role="tabpanel" aria-labelledby="part3-tab">
+
+    <div class="card-header bg-transparent mainheader" >
+     <h3 class="card-title font-weight-bold mt-3 mb-3"> Signals </h3>
+    </div>
+    <img src="{% static 'Robots_p55l50.png' %}" alt="signal graph" height="400"/>
+    <h3>Signals before Guess 1</h3>
+    <p>
+      Before making your first guess (Guess 1), you will be shown three signals generated by Robots X, Y, and Z (one signal each). Each robot’s signal correctly states the assigned color of the round with 55% chance.
+    </p>
+    <p>
+      For example, if the color assigned for the round is Red, then Robot X will state the color Red with 55% chance and Blue with 45% chance. Robots Y and Z will do the same.
+    </p>
+    <img src="{% static 'RobotXYZ_p55l50.png' %}" alt="signal123 graph" height="400"/>
+    <h3>Signals after Guess 1</h3>
+    <p>
+      Before making your second guess (Guess 2), you will receive a 4th signal. This 4th signal can come from Robot Z with 50% chance or from Robot W with 50% chance. If it is from Robot Z, it will repeat the signal it produced before Guess 1. If it is from Robot W, then the 4th signal will match the assigned color for the round with 99% chance. You will not know whether the 4th signal was generated by Robot Z or Robot W.
+    </p>
+    <p>
+      For example, if the assigned color is Red then Robot W will state the color Red with 99% chance and Blue with 1% chance. The 4th signal repeats Robot Z’s signal with 50% chance or reports Robot W’s color with 50% chance.
+    </p>
+    <img src="{% static 'RobotW_p55l50.png' %}" alt="signal4 graph" height="400"/>
+    <br>
+
+    <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
+    <button onclick="topFunction()" type="button" class="nexttab btn-primary btn next">Next</button>
+  </div>
+
+  <div class="tab-pane" id="part4" role="tabpanel" aria-labelledby="part4-tab">
+
+    <div class="card-header bg-transparent mainheader" >
+     <h3 class="card-title font-weight-bold mt-3 mb-3"> Blocks </h3>
+    </div>
+    <p>
+      There will be three blocks with 20 rounds per block. As you go through each block, more information is presented. That is, a summary table of 3000 simulated assigned colors and signal draws will be presented with the four signals in a round. Note that your task remains the same. You will still make two guesses about the chance that the assigned color for the round is red--one before receiving the 4th signals and one after receiving it.
+    </p>
+    <p>
+      In Block 1, no summary table will be presented with your 4 signals. For Blocks 2 and 3, there will be further instructions for the summary tables to be presented.
+    </p>
+    <p>
+        Note that your task remains the same for all blocks: <strong> make two guesses about the chance that the assigned color for the round is red</strong>.
+    </p>
+
+    <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
+    <button onclick="topFunction()" type="button" class="nexttab btn-primary btn next">Next</button>
+  </div>
+
+  <div class="tab-pane" id="part5" role="tabpanel" aria-labelledby="part5-tab">
+
+    <div class="card-header bg-transparent mainheader" >
+     <h3 class="card-title font-weight-bold mt-3 mb-3"> Summary </h3>
+    </div>
+    <br>
+    <p>
+        <ol>
+          <li>
+              This experiment will have 60 rounds of belief updating tasks divided into three 20-round blocks.
+          </li>
+            <br>
+          <li>
+              For each round of a belief updating task, a color will be randomly assigned that is either Red or Blue (with equal probability). In each round, we ask you to make two guesses about the chance that the assigned color for the round is red.
+          </li>
+            <br>
+          <li>
+            In Block 1, you will be given 3 signals then you will make your first guess (Guess 1). Then, you will be given a 4th signal after which you make your second guess (Guess 2).
+          </li>  <br>
+          <li>
+            In Block 2, will be given a summary table of assigned colors and the first three signals from a large number of simulated rounds. Further details will be presented before you proceed to Block 2.
+          </li> <br>
+          <li>
+             In Block 3, the summary table from Block 2 will be shown as well. In addition to this, you will be given a second summary table of all four assigned colors from the same large number of simulated rounds. Further details will be presented before you proceed to Block 3.
+          </li>
+        </ol>
+    </p>
+
+    <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
+    <button onclick="topFunction()" type="button" class="nexttab btn-primary btn next">Next</button>
+  </div>
+
+  <div class="tab-pane" id="part6" role="tabpanel" aria-labelledby="part6-tab">
+    <div class="card-header bg-transparent mainheader" >
+     <h3 class="card-title font-weight-bold mt-3 mb-3"> Payment </h3>
+    </div>
+    <br>
+    <p>
+        Your payment will depend on two randomly selected guesses among all your guesses across the 60 rounds: one is selected among all your first guesses for each round (Guess 1) and the other is selected among all your second guesses for each round (Guess 2).
+    </p>
+    <p>
+        The guess will be used to fill up the following list of 100 questions:
+    </p>
+
+    <p>
+        <strong>Question #n</strong> Which would you choose:
+        <ul>
+            <li><i>Option A</i> win $10 if assigned color is Red</li>
+            <li><i>Option B</i> win $10 with n% chance</li>
+        </ul>
+    </p>
+
+    <p> where Question #n goes from 1 to 100.</p>
+    <p>
+        For example, suppose that you stated that there is 75% chance that the assigned color is Red from the selected Guess 1. By choosing 75%, we will fill up the following list of questions for you by choosing Option A for all questions from Q1 to Q74 and Option B for all question from Q75 onwards.
+    </p>
+    <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-7btt">Q#</th>
+                <th class="tg-c3ow"></th>
+                <th class="tg-c3ow">Option A</th>
+                <th class="tg-c3ow"></th>
+                <th class="tg-c3ow">Option B</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-7btt">1</td>
+                <td class="tg-c3ow">Which would you choose:</td>
+                <td class="tg-c3ow"><strong>win $10 if assigned color is <span style="color:red">Red</span></strong></td>
+                <td class="tg-c3ow">or</td>
+                <td class="tg-c3ow">win $10 with 1% chance</td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">2</td>
+                <td class="tg-c3ow">Which would you choose:</td>
+                <td class="tg-c3ow"><strong>win $10 if assigned color is <span style="color:red">Red</span></strong></td>
+                <td class="tg-c3ow">or</td>
+                <td class="tg-c3ow">win $10 with 1% chance</td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">3</td>
+                <td class="tg-c3ow">Which would you choose:</td>
+                <td class="tg-c3ow"><strong>win $10 if assigned color is <span style="color:red">Red</span></strong></td>
+                <td class="tg-c3ow">or</td>
+                <td class="tg-c3ow">win $10 with 3% chance</td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">&#8942</td>
+                <td class="tg-c3ow">&#8942</td>
+                <td class="tg-c3ow">&#8942</td>
+                <td class="tg-c3ow">&#8942</td>
+                <td class="tg-c3ow">&#8942</td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">74</td>
+                <td class="tg-c3ow">Which would you choose:</td>
+                <td class="tg-c3ow"><strong>win $10 if assigned color is <span style="color:red">Red</span></strong></td>
+                <td class="tg-c3ow">or</td>
+                <td class="tg-c3ow">win $10 with 74% chance</td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">75</td>
+                <td class="tg-c3ow">Which would you choose:</td>
+                <td class="tg-c3ow">win $10 if assigned color is <span style="color:red">Red</span> </td>
+                <td class="tg-c3ow">or</td>
+                  <td class="tg-c3ow"><strong>win $10 with 75% chance</strong></td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">&#8942</td>
+                <td class="tg-c3ow">&#8942</td>
+                <td class="tg-c3ow">&#8942</td>
+                <td class="tg-c3ow">&#8942</td>
+                <td class="tg-c3ow">&#8942</td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">98</td>
+                <td class="tg-c3ow">Which would you choose:</td>
+                <td class="tg-c3ow">win $10 if assigned color is <span style="color:red">Red</span> </td>
+                <td class="tg-c3ow">or</td>
+                <td class="tg-c3ow"><strong>win $10 with 98% chance</strong></td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">99</td>
+                <td class="tg-c3ow">Which would you choose:</td>
+                <td class="tg-c3ow">win $10 if assigned color is <span style="color:red">Red</span> </td>
+                <td class="tg-c3ow">or</td>
+                <td class="tg-c3ow"><strong>win $10 with 99% chance</strong></td>
+              </tr>
+              <tr>
+                <td class="tg-7btt">100</td>
+                <td class="tg-c3ow">Which would you choose:</td>
+                <td class="tg-c3ow">win $10 if assigned color is <span style="color:red">Red</span> </td>
+                <td class="tg-c3ow">or</td>
+                <td class="tg-c3ow"><strong>win $10 with 100% chance</strong></td>
+              </tr>
+            </tbody>
+    </table>
+    <br>
+    <p>
+        We will randomly choose one of the questions <strong>Q#</strong> from this list (with equal chance) and pay you according to the answer for that question. Notice that if your <strong>true belief</strong> is 75%, <em>there is no incentive to lie about the switch point Q#75 as you may get an option that you prefer less in some of the rows of questions</em>. This is illustrated in the two examples.
+    </p>
+    <p>
+        <strong>Example: Underreporting.</strong> Suppose you underreported and stated that the chance is 50% instead of 75%. If the randomly selected question for payment is Q#60, you will win $10 with 60% chance (since Option B is chosen). However, you could have increased your chances of winning to 75% by actually reporting 75% (since Option A would have been chosen).
+    </p>
+    <p>
+        <strong>Example: Overreporting.</strong> Suppose you overreported and stated that the chance is 95% instead of 75%. If the randomly selected question for payment is Q#90, you will win $10 with 75% chance (since Option A is chosen). However, you could have increased your chance of winning to 90% by actually reporting 75% (since Option B would have been chosen).
+    </p>
+    <p>
+        This is similarly done for the payment from a randomly selected Guess 2. Your total earnings at the end of the experiment is calculated as follows:
+    </p>
+    <p>
+        Your total earnings = $2 show-up fee + earnings from a randomly selected Guess 1 + earnings from a randomly selected Guess 2.
+    </p>
+    <p><strong> Summary: The payment scheme is designed in a way to ensure that the best way to maximize your earnings is to report your true guess. For example, for guesses about the chance of your assigned color being red, you maximize your earnings by reporting your true beliefs for all rounds.
+    </strong></p>
+      <br>
+      <p><strong>Please click Next to proceed to Block 1.</strong></p>
+    <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
+    <button class="nexttab btn-primary btn next">Next</button>
+  </div>
+
+
+</div>
+
+</body>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0; margin-left: auto;margin-right: auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+
+</style>
+
+{% endblock %}
+
+
+
