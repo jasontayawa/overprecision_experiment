@@ -22,6 +22,16 @@ SESSION_CONFIGS = [
                      'questionnaire_p70l50',
                      'payment',]
     ),
+    dict(
+       name='p55l50_reverse',
+       display_name="Belief updating 3",
+       num_demo_participants=1,
+       app_sequence=['consent',
+                     'instructions_p55l50_reverse',
+                     'p55l50_reverse',
+                     'questionnaire_p55l50_reverse',
+                     'payment',]
+    ),
     # dict(
     #    name='rounds',
     #    display_name="rounds",

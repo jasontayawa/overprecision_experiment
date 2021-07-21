@@ -91,50 +91,34 @@
         <table class="tg">
         <thead>
           <tr>
-            <th class="tg-7btt">Signals (1, 2, 3) &#x2192;</th>
-            <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>)</th>
-            <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>)</th>
-            <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>)</th>
-            <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>)</th>
-            <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>)</th>
-            <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>)</th>
-            <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>)</th>
-            <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>)</th>
+            <th class="tg-7btt">Signals (1, 2) &#x2192;</th>
+            <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:red";>r</span>)</th>
+            <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:red";>b</span>)</th>
+            <th class="tg-c3ow">(<span style="color:red";>b</span>, <span style="color:blue";>r</span>)</th>
+            <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:red";>b</span>)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td class="tg-7btt">Color <span style="color:red";>Red</span></td>
-            <td class="tg-c3ow">{{ Rrrr }}</td>
-            <td class="tg-c3ow">{{ Rrrb }}</td>
-            <td class="tg-c3ow">{{ Rrbr }}</td>
-            <td class="tg-c3ow">{{ Rbrr }}</td>
-            <td class="tg-c3ow">{{ Rrbb }}</td>
-            <td class="tg-c3ow">{{ Rbrb }}</td>
-            <td class="tg-c3ow">{{ Rbbr }}</td>
-            <td class="tg-c3ow">{{ Rbbb }}</td>
+            <td class="tg-c3ow">{{ Rrr }}</td>
+            <td class="tg-c3ow">{{ Rrb }}</td>
+            <td class="tg-c3ow">{{ Rbr }}</td>
+            <td class="tg-c3ow">{{ Rbb }}</td>
           </tr>
           <tr>
             <td class="tg-7btt">Color <span style="color:blue";>Blue</span></td>
-            <td class="tg-c3ow">{{ Brrr }}</td>
-            <td class="tg-c3ow">{{ Brrb }}</td>
-            <td class="tg-c3ow">{{ Brbr }}</td>
-            <td class="tg-c3ow">{{ Bbrr }}</td>
-            <td class="tg-c3ow">{{ Brbb }}</td>
-            <td class="tg-c3ow">{{ Bbrb }}</td>
-            <td class="tg-c3ow">{{ Bbbr }}</td>
-            <td class="tg-c3ow">{{ Bbbb }}</td>
+            <td class="tg-c3ow">{{ Brr }}</td>
+            <td class="tg-c3ow">{{ Brb }}</td>
+            <td class="tg-c3ow">{{ Bbr }}</td>
+            <td class="tg-c3ow">{{ Bbb }}</td>
           </tr>
           <tr>
             <td class="tg-7btt"> Signal Total </td>
-            <td class="tg-c3ow">{{ rrr }}</td>
-            <td class="tg-c3ow">{{ rrb }}</td>
-            <td class="tg-c3ow">{{ rbr }}</td>
-            <td class="tg-c3ow">{{ brr }}</td>
-            <td class="tg-c3ow">{{ rbb }}</td>
-            <td class="tg-c3ow">{{ brb }}</td>
-            <td class="tg-c3ow">{{ bbr }}</td>
-            <td class="tg-c3ow">{{ bbb }}</td>
+            <td class="tg-c3ow">{{ rr }}</td>
+            <td class="tg-c3ow">{{ rb }}</td>
+            <td class="tg-c3ow">{{ br }}</td>
+            <td class="tg-c3ow">{{ bb }}</td>
           </tr>
         </tbody>
         </table>
@@ -147,156 +131,171 @@
 
     <p>Here is your last signal:</p>
 
-    {% if s4 == 1 %}
-        <p>Signal 4 &#x2192; (<span style="color:red";>red</span>)</p>
+    {% if s1 == 1  and s2 == 1 %}
+        <p>Signals (3,4) &#x2192; (<span style="color:red";>red</span>, <span style="color:red";>red</span>)</p>
 
         <p>Your four signals are:</p>
 
-        {% if s1 == 1  and s2 == 1 and s3 == 1 %}
+        {% if s3 == 1 and s4 == 1 and s1 == 1  and s2 == 1 %}
             <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>)</p>
-        {% elif s1 == 1  and s2 == 1 and s3 == 0 %}
-            <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>)</p>
-        {% elif s1 == 1  and s2 == 0 and s3 == 1 %}
+        {% elif s3 == 1 and s4 == 0 and s1 == 1  and s2 == 1 %}
             <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>)</p>
-        {% elif s1 == 0  and s2 == 1 and s3 == 1 %}
+        {% elif s3 == 0 and s4 == 1 and s1 == 1  and s2 == 1 %}
             <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>)</p>
-        {% elif s1 == 1  and s2 == 0 and s3 == 0 %}
-            <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>)</p>
-        {% elif s1 == 0  and s2 == 1 and s3 == 0 %}
-            <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:blue";>b</span>, <span style="color:#ff0000" ;>r</span>, <span style="color:blue" ;>b</span>, <span style="color:red";>r</span>)</p>
-        {% elif s1 == 0  and s2 == 0 and s3 == 1 %}
+        {% elif s3 == 0 and s4 == 0 and s1 == 1  and s2 == 1 %}
             <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>)</p>
-        {% elif s1 == 0  and s2 == 0 and s3 == 0 %}
-            <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>)</p>
         {% endif %}
-    {% elif s4 == 0 %}
-        <p>Signal 4 &#x2192; (<span style="color:blue";>blue</span>)</p>
+
+    {% elif s1 == 1  and s2 == 0 %}
+        <p>Signals (3,4) &#x2192; (<span style="color:red";>red</span>, <span style="color:blue";>blue</span>)</p>
 
         <p>Your four signals are:</p>
 
-        {% if s1 == 1  and s2 == 1 and s3 == 1 %}
+        {% if s3 == 1 and s4 == 1 and s1 == 1  and s2 == 1 %}
             <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>)</p>
-        {% elif s1 == 1  and s2 == 1 and s3 == 0 %}
-            <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>)</p>
-        {% elif s1 == 1  and s2 == 0 and s3 == 1 %}
+        {% elif s3 == 1 and s4 == 0 and s1 == 1  and s2 == 1 %}
             <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>)</p>
-        {% elif s1 == 0  and s2 == 1 and s3 == 1 %}
+        {% elif s3 == 0 and s4 == 1 and s1 == 1  and s2 == 1 %}
             <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>)</p>
-        {% elif s1 == 1  and s2 == 0 and s3 == 0 %}
-            <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>)</p>
-        {% elif s1 == 0  and s2 == 1 and s3 == 0 %}
-            <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:blue";>b</span>, <span style="color:#ff0000";>r</span>, <span style="color:blue" ;>b</span>, <span style="color:blue";>b</span>)</p>
-        {% elif s1 == 0  and s2 == 0 and s3 == 1 %}
+        {% elif s3 == 0 and s4 == 0 and s1 == 1  and s2 == 1 %}
             <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>)</p>
-        {% elif s1 == 0  and s2 == 0 and s3 == 0 %}
-            <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>)</p>
+        {% endif %}
+
+    {% elif s1 == 0  and s2 == 1 %}
+        <p>Signals (3,4) &#x2192; (<span style="color:blue";>blue</span>, <span style="color:red";>red</span>)</p>
+
+        <p>Your four signals are:</p>
+
+        {% if s3 == 1 and s4 == 1 and s1 == 1  and s2 == 1 %}
+            <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:blue";>blue</span>, <span style="color:red";>red</span>)</p>
+        {% elif s3 == 1 and s4 == 0 and s1 == 1  and s2 == 1 %}
+            <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:blue";>blue</span>, <span style="color:red";>red</span>)</p>
+        {% elif s3 == 0 and s4 == 1 and s1 == 1  and s2 == 1 %}
+            <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:blue";>blue</span>, <span style="color:red";>red</span>)</p>
+        {% elif s3 == 0 and s4 == 0 and s1 == 1  and s2 == 1 %}
+            <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:blue";>blue</span>, <span style="color:red";>red</span>)</p>
+        {% endif %}
+
+    {% elif s1 == 0  and s2 == 0 %}
+        <p>Signals (3,4) &#x2192; (<span style="color:blue";>blue</span>, <span style="color:blue";>blue</span>)</p>
+
+        <p>Your four signals are:</p>
+
+        {% if s3 == 1 and s4 == 1 and s1 == 1  and s2 == 1 %}
+            <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:blue";>blue</span>, <span style="color:blue";>blue</span>)</p>
+        {% elif s3 == 1 and s4 == 0 and s1 == 1  and s2 == 1 %}
+            <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:blue";>blue</span>, <span style="color:blue";>blue</span>)</p>
+        {% elif s3 == 0 and s4 == 1 and s1 == 1  and s2 == 1 %}
+            <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:blue";>blue</span>, <span style="color:blue";>blue</span>)</p>
+        {% elif s3 == 0 and s4 == 0 and s1 == 1  and s2 == 1 %}
+            <p>Signals (1, 2, 3, 4) &#x2192; (<span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:blue";>blue</span>, <span style="color:blue";>blue</span>)</p>
         {% endif %}
     {% endif %}
 
     {% if subsession.round_number > 40 %}
         {% if s4 == 1 %}
-            <p>Here is the table of 3000 simulated rounds when Signal 4 is <span style="color:red";>red</span>:</p>
+            <p>Here is the table of 3000 simulated rounds when Signal 2 is <span style="color:red";>red</span>:</p>
 
             <table class="tg">
             <thead>
               <tr>
                 <th class="tg-7btt">Signals (1, 2, 3, 4) &#x2192;</th>
                 <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>)</th>
-                <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>)</th>
-                <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>)</th>
                 <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>)</th>
-                <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>)</th>
+                <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>)</th>
+                <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>)</th>
+                <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>)</th>
                 <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>)</th>
-                <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>)</th>
-                <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>)</th>
+                <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>)</th>
+                <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td class="tg-7btt">Color <span style="color:red";>Red</span></td>
                 <td class="tg-c3ow">{{ Rrrrr }}</td>
-                <td class="tg-c3ow">{{ Rrrbr }}</td>
-                <td class="tg-c3ow">{{ Rrbrr }}</td>
                 <td class="tg-c3ow">{{ Rbrrr }}</td>
-                <td class="tg-c3ow">{{ Rrbbr }}</td>
+                <td class="tg-c3ow">{{ Rrrrb }}</td>
+                <td class="tg-c3ow">{{ Rrrbr }}</td>
+                <td class="tg-c3ow">{{ Rbrrb }}</td>
                 <td class="tg-c3ow">{{ Rbrbr }}</td>
-                <td class="tg-c3ow">{{ Rbbrr }}</td>
-                <td class="tg-c3ow">{{ Rbbbr }}</td>
+                <td class="tg-c3ow">{{ Rrrbb }}</td>
+                <td class="tg-c3ow">{{ Rbrbb }}</td>
               </tr>
               <tr>
                 <td class="tg-7btt">Color <span style="color:blue";>Blue</span></td>
                 <td class="tg-c3ow">{{ Brrrr }}</td>
-                <td class="tg-c3ow">{{ Brrbr }}</td>
-                <td class="tg-c3ow">{{ Brbrr }}</td>
                 <td class="tg-c3ow">{{ Bbrrr }}</td>
-                <td class="tg-c3ow">{{ Brbbr }}</td>
+                <td class="tg-c3ow">{{ Brrrb }}</td>
+                <td class="tg-c3ow">{{ Brrbr }}</td>
+                <td class="tg-c3ow">{{ Bbrrb }}</td>
                 <td class="tg-c3ow">{{ Bbrbr }}</td>
-                <td class="tg-c3ow">{{ Bbbrr }}</td>
-                <td class="tg-c3ow">{{ Bbbbr }}</td>
+                <td class="tg-c3ow">{{ Brrbb }}</td>
+                <td class="tg-c3ow">{{ Bbrbb }}</td>
               </tr>
               <tr>
                 <td class="tg-7btt"> Signal Total </td>
                 <td class="tg-c3ow">{{ rrrr }}</td>
-                <td class="tg-c3ow">{{ rrbr }}</td>
-                <td class="tg-c3ow">{{ rbrr }}</td>
                 <td class="tg-c3ow">{{ brrr }}</td>
-                <td class="tg-c3ow">{{ rbbr }}</td>
+                <td class="tg-c3ow">{{ rrrb }}</td>
+                <td class="tg-c3ow">{{ rrbr }}</td>
+                <td class="tg-c3ow">{{ brrb }}</td>
                 <td class="tg-c3ow">{{ brbr }}</td>
-                <td class="tg-c3ow">{{ bbrr }}</td>
-                <td class="tg-c3ow">{{ bbbr }}</td>
+                <td class="tg-c3ow">{{ rrbb }}</td>
+                <td class="tg-c3ow">{{ brbb }}</td>
               </tr>
             </tbody>
             </table>
             <br>
         {% elif s4 == 0 %}
-            <p>Here is the table of 3000 simulated rounds when Signal 4 is <span style="color:blue";>blue</span>:</p>
+            <p>Here is the table of 3000 simulated rounds when Signal 2 is <span style="color:blue";>blue</span>:</p>
 
             <table class="tg">
             <thead>
               <tr>
                 <th class="tg-7btt">Signals (1, 2, 3, 4) &#x2192;</th>
-                <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>)</th>
-                <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>)</th>
+                <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>)</th>
+                <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>)</th>
                 <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>)</th>
-                <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>)</th>
-                <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>)</th>
-                <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>)</th>
+                <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>)</th>
                 <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>, <span style="color:blue";>b</span>)</th>
+                <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:red";>r</span>)</th>
+                <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>)</th>
                 <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>, <span style="color:blue";>b</span>)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td class="tg-7btt">Color <span style="color:red";>Red</span></td>
-                <td class="tg-c3ow">{{ Rrrrb }}</td>
-                <td class="tg-c3ow">{{ Rrrbb }}</td>
+                <td class="tg-c3ow">{{ Rrbrr }}</td>
+                <td class="tg-c3ow">{{ Rbbrr }}</td>
                 <td class="tg-c3ow">{{ Rrbrb }}</td>
-                <td class="tg-c3ow">{{ Rbrrb }}</td>
-                <td class="tg-c3ow">{{ Rrbbb }}</td>
-                <td class="tg-c3ow">{{ Rbrbb }}</td>
+                <td class="tg-c3ow">{{ Rrbbr }}</td>
                 <td class="tg-c3ow">{{ Rbbrb }}</td>
+                <td class="tg-c3ow">{{ Rbbbr }}</td>
+                <td class="tg-c3ow">{{ Rrbbb }}</td>
                 <td class="tg-c3ow">{{ Rbbbb }}</td>
               </tr>
               <tr>
                 <td class="tg-7btt">Color <span style="color:blue";>Blue</span></td>
-                <td class="tg-c3ow">{{ Brrrb }}</td>
-                <td class="tg-c3ow">{{ Brrbb }}</td>
+                <td class="tg-c3ow">{{ Brbrr }}</td>
+                <td class="tg-c3ow">{{ Bbbrr }}</td>
                 <td class="tg-c3ow">{{ Brbrb }}</td>
-                <td class="tg-c3ow">{{ Bbrrb }}</td>
-                <td class="tg-c3ow">{{ Brbbb }}</td>
-                <td class="tg-c3ow">{{ Bbrbb }}</td>
+                <td class="tg-c3ow">{{ Brbbr }}</td>
                 <td class="tg-c3ow">{{ Bbbrb }}</td>
+                <td class="tg-c3ow">{{ Bbbbr }}</td>
+                <td class="tg-c3ow">{{ Brbbb }}</td>
                 <td class="tg-c3ow">{{ Bbbbb }}</td>
               </tr>
               <tr>
                 <td class="tg-7btt"> Signal Total </td>
-                <td class="tg-c3ow">{{ rrrb }}</td>
-                <td class="tg-c3ow">{{ rrbb }}</td>
+                <td class="tg-c3ow">{{ rbrr }}</td>
+                <td class="tg-c3ow">{{ bbrr }}</td>
                 <td class="tg-c3ow">{{ rbrb }}</td>
-                <td class="tg-c3ow">{{ brrb }}</td>
-                <td class="tg-c3ow">{{ rbbb }}</td>
-                <td class="tg-c3ow">{{ brbb }}</td>
+                <td class="tg-c3ow">{{ rbbr }}</td>
                 <td class="tg-c3ow">{{ bbrb }}</td>
+                <td class="tg-c3ow">{{ bbbr }}</td>
+                <td class="tg-c3ow">{{ rbbb }}</td>
                 <td class="tg-c3ow">{{ bbbb }}</td>
               </tr>
             </tbody>
@@ -304,187 +303,6 @@
             <br>
         {% endif %}
     {% endif %}
-
-{#    {% if  subsession.round_number > 40 %}#}
-{#    {% if s1 == 1 and s2 == 1 %}#}
-{#            <p>Here is the table of 3000 simulated rounds given <span style="font-weight: bold">signals 1 and 2 are  <span style="color:red";>red</span></span>:</p>#}
-{#            <table class="tg">#}
-{#            <thead>#}
-{#              <tr>#}
-{#                <th class="tg-7btt">Signals (3, 4) &#x2192;</th>#}
-{#                <th class="tg-c3ow">(<span style="color:red";>red</span>,<span style="color:red";>red</span>)</th>#}
-{#                <th class="tg-c3ow">(<span style="color:red";>red</span>,<span style="color:blue";>blue</span>)</th>#}
-{#                <th class="tg-c3ow">(<span style="color:blue";>blue</span>,<span style="color:red";>red</span>)</th>#}
-{#                <th class="tg-c3ow">(<span style="color:blue";>blue</span>,<span style="color:blue";>blue</span>)</th>#}
-{#              </tr>#}
-{#            </thead>#}
-{#            <tbody>#}
-{#              <tr>#}
-{#                <td class="tg-7btt">Color <span style="color:red";>Red</span></td>#}
-{#                <td class="tg-c3ow">{{ Rrr_rr }}</td>#}
-{#                <td class="tg-c3ow">{{ Rrb_rr }}</td>#}
-{#                <td class="tg-c3ow">{{ Rbr_rr }}</td>#}
-{#                <td class="tg-c3ow">{{ Rbb_rr }}</td>#}
-{#              </tr>#}
-{#              <tr>#}
-{#                <td class="tg-7btt">Color <span style="color:blue";>Blue</span></td>#}
-{#                <td class="tg-c3ow">{{ Brr_rr }}</td>#}
-{#                <td class="tg-c3ow">{{ Brb_rr }}</td>#}
-{#                <td class="tg-c3ow">{{ Bbr_rr }}</td>#}
-{#                <td class="tg-c3ow">{{ Bbb_rr }}</td>#}
-{#              </tr>#}
-{#              <tr>#}
-{#                <td class="tg-7btt">Signal Total</td>#}
-{#                <td class="tg-c3ow">{{ rr_rr }}</td>#}
-{#                <td class="tg-c3ow">{{ rb_rr }}</td>#}
-{#                <td class="tg-c3ow">{{ br_rr }}</td>#}
-{#                <td class="tg-c3ow">{{ bb_rr }}</td>#}
-{#              </tr>#}
-{#            </tbody>#}
-{#            </table>#}
-{#        {% elif s1 == 1 and s2 == 0 %}#}
-{#            <p>Here is the table of 3000 simulated rounds given <span style="font-weight: bold">signal 1 is <span style="color:red";>red</span> and signal 2 <span style="color:blue";>blue</span></span>:</p>#}
-{#            <table class="tg">#}
-{#            <thead>#}
-{#              <tr>#}
-{#                <th class="tg-7btt">Signals (3, 4) &#x2192;</th>#}
-{#                <th class="tg-c3ow">(<span style="color:red";>red</span>,<span style="color:red";>red</span>)</th>#}
-{#                <th class="tg-c3ow">(<span style="color:red";>red</span>,<span style="color:blue";>blue</span>)</th>#}
-{#                <th class="tg-c3ow">(<span style="color:blue";>blue</span>,<span style="color:red";>red</span>)</th>#}
-{#                <th class="tg-c3ow">(<span style="color:blue";>blue</span>,<span style="color:blue";>blue</span>)</th>#}
-{#              </tr>#}
-{#            </thead>#}
-{#            <tbody>#}
-{#              <tr>#}
-{#                <td class="tg-7btt">Color <span style="color:red";>Red</span></td>#}
-{#                <td class="tg-c3ow">{{ Rrr_rb }}</td>#}
-{#                <td class="tg-c3ow">{{ Rrb_rb }}</td>#}
-{#                <td class="tg-c3ow">{{ Rbr_rb }}</td>#}
-{#                <td class="tg-c3ow">{{ Rbb_rb }}</td>#}
-{#              </tr>#}
-{#              <tr>#}
-{#                <td class="tg-7btt">Color <span style="color:blue";>Blue</span></td>#}
-{#                <td class="tg-c3ow">{{ Brr_rb }}</td>#}
-{#                <td class="tg-c3ow">{{ Brb_rb }}</td>#}
-{#                <td class="tg-c3ow">{{ Bbr_rb }}</td>#}
-{#                <td class="tg-c3ow">{{ Bbb_rb }}</td>#}
-{#               </tr>#}
-{#              <tr>#}
-{#                <td class="tg-7btt">Signal Total</td>#}
-{#                <td class="tg-c3ow">{{ rr_rb }}</td>#}
-{#                <td class="tg-c3ow">{{ rb_rb }}</td>#}
-{#                <td class="tg-c3ow">{{ br_rb }}</td>#}
-{#                <td class="tg-c3ow">{{ bb_rb }}</td>#}
-{#               </tr>#}
-{#            </tbody>#}
-{#            </table>#}
-{#        {% elif s1 == 0 and s2 == 1 %}#}
-{#            <p>Here is the table of 3000 simulated rounds given <span style="font-weight: bold">signal 1 is <span style="color:blue";>blue</span> and signal 2 <span style="color:red";>red</span></span>:</p>#}
-{#            <table class="tg">#}
-{#            <thead>#}
-{#              <tr>#}
-{#                <th class="tg-7btt">Signals (3, 4) &#x2192;</th>#}
-{#                <th class="tg-c3ow">(<span style="color:red";>red</span>,<span style="color:red";>red</span>)</th>#}
-{#                <th class="tg-c3ow">(<span style="color:red";>red</span>,<span style="color:blue";>blue</span>)</th>#}
-{#                <th class="tg-c3ow">(<span style="color:blue";>blue</span>,<span style="color:red";>red</span>)</th>#}
-{#                <th class="tg-c3ow">(<span style="color:blue";>blue</span>,<span style="color:blue";>blue</span>)</th>#}
-{#              </tr>#}
-{#            </thead>#}
-{#            <tbody>#}
-{#              <tr>#}
-{#                <td class="tg-7btt">Color <span style="color:red";>Red</span></td>#}
-{#                <td class="tg-c3ow">{{ Rrr_br }}</td>#}
-{#                <td class="tg-c3ow">{{ Rrb_br }}</td>#}
-{#                <td class="tg-c3ow">{{ Rbr_br }}</td>#}
-{#                <td class="tg-c3ow">{{ Rbb_br }}</td>#}
-{#              </tr>#}
-{#              <tr>#}
-{#                <td class="tg-7btt">Color <span style="color:blue";>Blue</span></td>#}
-{#                <td class="tg-c3ow">{{ Brr_br }}</td>#}
-{#                <td class="tg-c3ow">{{ Brb_br }}</td>#}
-{#                <td class="tg-c3ow">{{ Bbr_br }}</td>#}
-{#                <td class="tg-c3ow">{{ Bbb_br }}</td>#}
-{#               </tr>#}
-{#              <tr>#}
-{#                <td class="tg-7btt">Signal Total</td>#}
-{#                <td class="tg-c3ow">{{ rr_br }}</td>#}
-{#                <td class="tg-c3ow">{{ rb_br }}</td>#}
-{#                <td class="tg-c3ow">{{ br_br }}</td>#}
-{#                <td class="tg-c3ow">{{ bb_br }}</td>#}
-{#               </tr>#}
-{#            </tbody>#}
-{#            </table>#}
-{#        {% elif s1 == 0 and s2 == 0 %}#}
-{#            <p>Here is the table of 3000 simulated rounds given <span style="font-weight: bold">signals 1 and 2 are  <span style="color:blue";>blue</span></span>:</p>#}
-{#            <table class="tg">#}
-{#            <thead>#}
-{#              <tr>#}
-{#                <th class="tg-7btt">Signals (3, 4) &#x2192;</th>#}
-{#                <th class="tg-c3ow">(<span style="color:red";>red</span>,<span style="color:red";>red</span>)</th>#}
-{#                <th class="tg-c3ow">(<span style="color:red";>red</span>,<span style="color:blue";>blue</span>)</th>#}
-{#                <th class="tg-c3ow">(<span style="color:blue";>blue</span>,<span style="color:red";>red</span>)</th>#}
-{#                <th class="tg-c3ow">(<span style="color:blue";>blue</span>,<span style="color:blue";>blue</span>)</th>#}
-{#              </tr>#}
-{#            </thead>#}
-{#            <tbody>#}
-{#              <tr>#}
-{#                <td class="tg-7btt">Color <span style="color:red";>Red</span></td>#}
-{#                <td class="tg-c3ow">{{ Rrr_bb }}</td>#}
-{#                <td class="tg-c3ow">{{ Rrb_bb }}</td>#}
-{#                <td class="tg-c3ow">{{ Rbr_bb }}</td>#}
-{#                <td class="tg-c3ow">{{ Rbb_bb }}</td>#}
-{#              </tr>#}
-{#              <tr>#}
-{#                <td class="tg-7btt">Color <span style="color:blue";>Blue</span></td>#}
-{#                <td class="tg-c3ow">{{ Brr_bb }}</td>#}
-{#                <td class="tg-c3ow">{{ Brb_bb }}</td>#}
-{#                <td class="tg-c3ow">{{ Bbr_bb }}</td>#}
-{#                <td class="tg-c3ow">{{ Bbb_bb }}</td>#}
-{#               </tr>#}
-{#              <tr>#}
-{#                <td class="tg-7btt">Signal Total</td>#}
-{#                <td class="tg-c3ow">{{ rr_bb }}</td>#}
-{#                <td class="tg-c3ow">{{ rb_bb }}</td>#}
-{#                <td class="tg-c3ow">{{ br_bb }}</td>#}
-{#                <td class="tg-c3ow">{{ bb_bb }}</td>#}
-{#               </tr>#}
-{#            </tbody>#}
-{#            </table>#}
-{#        {%  endif %}#}
-{#    <br>#}
-{#    {% endif %}#}
-
-
-
-{#    <p>Here is the table of 2000 simulated rounds given <span style="font-weight: bold">signals 1 and 2 are  <span style="color:red";>red</span></span>:</p>#}
-{##}
-{#    <table class="tg">#}
-{#    <thead>#}
-{#      <tr>#}
-{#        <th class="tg-7btt">Signals (3, 4) &#x2192;</th>#}
-{#        <th class="tg-c3ow">(<span style="color:red";>red</span>,<span style="color:red";>red</span>)</th>#}
-{#        <th class="tg-c3ow">(<span style="color:red";>red</span>,<span style="color:blue";>blue</span>)</th>#}
-{#        <th class="tg-c3ow">(<span style="color:blue";>blue</span>,<span style="color:red";>red</span>)</th>#}
-{#        <th class="tg-c3ow">(<span style="color:blue";>blue</span>,<span style="color:blue";>blue</span>)</th>#}
-{#      </tr>#}
-{#    </thead>#}
-{#    <tbody>#}
-{#      <tr>#}
-{#        <td class="tg-7btt">Color <span style="color:red";>Red</span></td>#}
-{#        <td class="tg-c3ow">{{ Rrr_rr }}</td>#}
-{#        <td class="tg-c3ow">{{ Rrb_rr }}</td>#}
-{#        <td class="tg-c3ow">{{ Rbr_rr }}</td>#}
-{#        <td class="tg-c3ow">{{ Rbb_rr }}</td>#}
-{#      </tr>#}
-{#      <tr>#}
-{#        <td class="tg-7btt">Color <span style="color:blue";>Blue</span></td>#}
-{#        <td class="tg-c3ow">{{ Brr_rr }}</td>#}
-{#        <td class="tg-c3ow">{{ Brb_rr }}</td>#}
-{#        <td class="tg-c3ow">{{ Bbr_rr }}</td>#}
-{#        <td class="tg-c3ow">{{ Bbb_rr }}</td>#}
-{#       </tr>#}
-{#    </tbody>#}
-{#    </table>#}
 
 
 

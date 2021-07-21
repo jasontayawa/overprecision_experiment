@@ -15,67 +15,45 @@ class Guess1(Page):
             return 'Please use the slider to make a decision.'
 
     def vars_for_template(self):
+        #table 1 reverse variables
         s1 = self.player.signal1
         s2 = self.player.signal2
         s3 = self.player.signal3
         s4 = self.player.signal4
 
-        Rrrr = self.subsession.Rrrr
-        Rrrb = self.subsession.Rrrb
-        Rrbr = self.subsession.Rrbr
-        Rbrr = self.subsession.Rbrr
-        Rrbb = self.subsession.Rrbb
-        Rbrb = self.subsession.Rbrb
-        Rbbr = self.subsession.Rbbr
-        Rbbb = self.subsession.Rbbb
+        Rrr = self.subsession.Rrr
+        Rrb = self.subsession.Rrb
+        Rbr = self.subsession.Rbr
+        Rbb = self.subsession.Rbb
 
-        Brrr = self.subsession.Brrr
-        Brrb = self.subsession.Brrb
-        Brbr = self.subsession.Brbr
-        Bbrr = self.subsession.Bbrr
-        Brbb = self.subsession.Brbb
-        Bbrb = self.subsession.Bbrb
-        Bbbr = self.subsession.Bbbr
-        Bbbb = self.subsession.Bbbb
+        Brr = self.subsession.Brr
+        Brb = self.subsession.Brb
+        Bbr = self.subsession.Bbr
+        Bbb = self.subsession.Bbb
 
-        rrr = Rrrr + Brrr
-        rrb = Rrrb + Brrb
-        rbr = Rrbr + Brbr
-        brr = Rbrr + Bbrr
-        rbb = Rrbb + Brbb
-        brb = Rbrb + Bbrb
-        bbr = Rbbr + Bbbr
-        bbb = Rbbb + Bbbb
+        #table 1 reverse variables totals
+        rr = Rrr + Brr
+        rb = Rrb + Brb
+        br = Rbr + Bbr
+        bb = Rbb + Bbb
 
         return dict(
             s1=s1,
             s2=s2,
             s3=s3,
             s4=s4,
-            Rrrr=Rrrr,
-            Rrrb=Rrrb,
-            Rrbr=Rrbr,
-            Rbrr=Rbrr,
-            Rrbb=Rrbb,
-            Rbrb=Rbrb,
-            Rbbr=Rbbr,
-            Rbbb=Rbbb,
-            Brrr=Brrr,
-            Brrb=Brrb,
-            Brbr=Brbr,
-            Bbrr=Bbrr,
-            Brbb=Brbb,
-            Bbrb=Bbrb,
-            Bbbr=Bbbr,
-            Bbbb=Bbbb,
-            rrr=rrr,
-            rrb=rrb,
-            rbr=rbr,
-            brr=brr,
-            rbb=rbb,
-            brb=brb,
-            bbr=bbr,
-            bbb=bbb,
+            Rrr=Rrr,
+            Rrb=Rrb,
+            Rbr=Rbr,
+            Rbb=Rbb,
+            Brr=Brr,
+            Brb=Brb,
+            Bbr=Bbr,
+            Bbb=Bbb,
+            rr=rr,
+            rb=rb,
+            br=br,
+            bb=bb,
         )
 
 class Guess2(Page):
@@ -87,97 +65,84 @@ class Guess2(Page):
             return 'Please use the slider to make a decision.'
 
     def vars_for_template(self):
+        # table 1 reverse variables
         s1 = self.player.signal1
         s2 = self.player.signal2
         s3 = self.player.signal3
         s4 = self.player.signal4
 
-        # table 1 variables
+        Rrr = self.subsession.Rrr
+        Rrb = self.subsession.Rrb
+        Rbr = self.subsession.Rbr
+        Rbb = self.subsession.Rbb
 
-        Rrrr = self.subsession.Rrrr
-        Rrrb = self.subsession.Rrrb
-        Rrbr = self.subsession.Rrbr
-        Rbrr = self.subsession.Rbrr
-        Rrbb = self.subsession.Rrbb
-        Rbrb = self.subsession.Rbrb
-        Rbbr = self.subsession.Rbbr
-        Rbbb = self.subsession.Rbbb
+        Brr = self.subsession.Brr
+        Brb = self.subsession.Brb
+        Bbr = self.subsession.Bbr
+        Bbb = self.subsession.Bbb
 
-        Brrr = self.subsession.Brrr
-        Brrb = self.subsession.Brrb
-        Brbr = self.subsession.Brbr
-        Bbrr = self.subsession.Bbrr
-        Brbb = self.subsession.Brbb
-        Bbrb = self.subsession.Bbrb
-        Bbbr = self.subsession.Bbbr
-        Bbbb = self.subsession.Bbbb
+        # table 1 reverse variables totals
+        rr = Rrr + Brr
+        rb = Rrb + Brb
+        br = Rbr + Bbr
+        bb = Rbb + Bbb
 
-        # total signal combos for s1 s2 s3
-        rrr = Rrrr + Brrr
-        rrb = Rrrb + Brrb
-        rbr = Rrbr + Brbr
-        brr = Rbrr + Bbrr
-        rbb = Rrbb + Brbb
-        brb = Rbrb + Bbrb
-        bbr = Rbbr + Bbbr
-        bbb = Rbbb + Bbbb
-
-        # table 2 variables when s4, s4=r
+        # table 2 reverse variables when s4, s4=r
         Rrrrr = self.subsession.Rrrrr
-        Rrrbr = self.subsession.Rrrbr
-        Rrbrr = self.subsession.Rrbrr
         Rbrrr = self.subsession.Rbrrr
-        Rrbbr = self.subsession.Rrbbr
+        Rrrrb = self.subsession.Rrrrb
+        Rrrbr = self.subsession.Rrrbr
+        Rbrrb = self.subsession.Rbrrb
         Rbrbr = self.subsession.Rbrbr
-        Rbbrr = self.subsession.Rbbrr
-        Rbbbr = self.subsession.Rbbbr
+        Rrrbb = self.subsession.Rrrbb
+        Rbrbb = self.subsession.Rbrbb
 
         Brrrr = self.subsession.Brrrr
-        Brrbr = self.subsession.Brrbr
-        Brbrr = self.subsession.Brbrr
         Bbrrr = self.subsession.Bbrrr
-        Brbbr = self.subsession.Brbbr
+        Brrrb = self.subsession.Brrrb
+        Brrbr = self.subsession.Brrbr
+        Bbrrb = self.subsession.Bbrrb
         Bbrbr = self.subsession.Bbrbr
-        Bbbrr = self.subsession.Bbbrr
-        Bbbbr = self.subsession.Bbbbr
+        Brrbb = self.subsession.Brrbb
+        Bbrbb = self.subsession.Bbrbb
 
-        # total signal combos for s1 s2 s3 and s4=r
+        # reverse total signal combos for s1 s2 s3 and s4=r
         rrrr = Rrrrr + Brrrr
-        rrbr = Rrrbr + Brrbr
-        rbrr = Rrbrr + Brbrr
         brrr = Rbrrr + Bbrrr
-        rbbr = Rrbbr + Brbbr
+        rrrb = Rrrrb + Brrrb
+        rrbr = Rrrbr + Brrbr
+        brrb = Rbrrb + Bbrrb
         brbr = Rbrbr + Bbrbr
-        bbrr = Rbbrr + Bbbrr
-        bbbr = Rbbbr + Bbbbr
+        rrbb = Rrrbb + Brrbb
+        brbb = Rbrbb + Bbrbb
 
-        # table 2 variables when s4, s4=b
-        Rrrrb = self.subsession.Rrrrb
-        Rrrbb = self.subsession.Rrrbb
+        # table 2 reverse variables when s4, s4=b
+        Rrbrr = self.subsession.Rrbrr
+        Rbbrr = self.subsession.Rbbrr
         Rrbrb = self.subsession.Rrbrb
-        Rbrrb = self.subsession.Rbrrb
-        Rrbbb = self.subsession.Rrbbb
-        Rbrbb = self.subsession.Rbrbb
+        Rrbbr = self.subsession.Rrbbr
         Rbbrb = self.subsession.Rbbrb
+        Rbbbr = self.subsession.Rbbbr
+        Rrbbb = self.subsession.Rrbbb
         Rbbbb = self.subsession.Rbbbb
 
-        Brrrb = self.subsession.Brrrb
-        Brrbb = self.subsession.Brrbb
+        Brbrr = self.subsession.Brbrr
+        Bbbrr = self.subsession.Bbbrr
         Brbrb = self.subsession.Brbrb
-        Bbrrb = self.subsession.Bbrrb
-        Brbbb = self.subsession.Brbbb
-        Bbrbb = self.subsession.Bbrbb
+        Brbbr = self.subsession.Brbbr
         Bbbrb = self.subsession.Bbbrb
+        Bbbbr = self.subsession.Bbbbr
+        Brbbb = self.subsession.Brbbb
         Bbbbb = self.subsession.Bbbbb
 
-        # total signal combos for s1 s2 s3 and s4=b
-        rrrb = Rrrrb + Brrrb
-        rrbb = Rrrbb + Brrbb
+        # reverse total signal combos for s1 s2 s3 and s4=b
+        rbrr = Rrbrr + Brbrr
+        bbrr = Rbbrr + Bbbrr
         rbrb = Rrbrb + Brbrb
-        brrb = Rbrrb + Bbrrb
-        rbbb = Rrbbb + Brbbb
-        brbb = Rbrbb + Bbrbb
+        rbbr = Rrbbr + Brbbr
         bbrb = Rbbrb + Bbbrb
+        bbbr = Rbbbr + Bbbbr
+        rbbb = Rrbbb + Brbbb
         bbbb = Rbbbb + Bbbbb
 
 
@@ -186,30 +151,18 @@ class Guess2(Page):
             s2=s2,
             s3=s3,
             s4=s4,
-            Rrrr=Rrrr,
-            Rrrb=Rrrb,
-            Rrbr=Rrbr,
-            Rbrr=Rbrr,
-            Rrbb=Rrbb,
-            Rbrb=Rbrb,
-            Rbbr=Rbbr,
-            Rbbb=Rbbb,
-            Brrr=Brrr,
-            Brrb=Brrb,
-            Brbr=Brbr,
-            Bbrr=Bbrr,
-            Brbb=Brbb,
-            Bbrb=Bbrb,
-            Bbbr=Bbbr,
-            Bbbb=Bbbb,
-            rrr=rrr,
-            rrb=rrb,
-            rbr=rbr,
-            brr=brr,
-            rbb=rbb,
-            brb=brb,
-            bbr=bbr,
-            bbb=bbb,
+            Rrr=Rrr,
+            Rrb=Rrb,
+            Rbr=Rbr,
+            Rbb=Rbb,
+            Brr=Brr,
+            Brb=Brb,
+            Bbr=Bbr,
+            Bbb=Bbb,
+            rr=rr,
+            rb=rb,
+            br=br,
+            bb=bb,
             Rrrrr=Rrrrr,
             Rrrbr=Rrrbr,
             Rrbrr=Rrbrr,
