@@ -419,8 +419,8 @@ class Payment_Calculation(Page):
         return self.round_number == Constants.num_rounds
 
     def vars_for_template(self):
-        self.player.random_round1 = random.randint(1, 21)  # random.randint(1, 60)
-        self.player.random_round2 = random.randint(1, 21)  # random.randint(1, 60)
+        self.player.random_round1 = random.randint(1, 60)
+        self.player.random_round2 = random.randint(1, 60)
         player_in_round1 = self.player.in_round(self.player.random_round1)
         player_in_round2 = self.player.in_round(self.player.random_round2)
 

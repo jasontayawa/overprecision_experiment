@@ -66,6 +66,19 @@
     .tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
     </style>
 
+    {% if subsession.round_number < 5 %}
+
+    <p>Here is your signals:</p>
+
+    {% if s3 == 1  %}
+        <p>Signal 1 &#x2192; (<span style="color:red";>r</span>)</p>
+    {% elif s3 == 0 %}
+        <p>Signal 1 &#x2192; (<span style="color:blue";>b</span>)</p>
+    {% endif %}
+
+    {% endif %}
+
+    {% if subsession.round_number > 4 %}
     <p>Here are your first 2 signals:</p>
 
     {% if s3 == 1  and s4 == 1 %}
@@ -78,7 +91,9 @@
         <p>Signals (1, 2) &#x2192; (<span style="color:blue";>b</span>, <span style="color:blue";>b</span>)</p>
     {% endif %}
 
-    {% if subsession.round_number > 20 %}
+    {% endif %}
+
+    {% if subsession.round_number > 24 %}
         <p>Here is the table of 3000 simulated rounds:</p>
 
         <table class="tg">
@@ -86,9 +101,9 @@
           <tr>
             <th class="tg-7btt">Signals (1, 2) &#x2192;</th>
             <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:red";>r</span>)</th>
-            <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:red";>b</span>)</th>
-            <th class="tg-c3ow">(<span style="color:red";>b</span>, <span style="color:blue";>r</span>)</th>
-            <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:red";>b</span>)</th>
+            <th class="tg-c3ow">(<span style="color:red";>r</span>, <span style="color:blue";>b</span>)</th>
+            <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:red";>r</span>)</th>
+            <th class="tg-c3ow">(<span style="color:blue";>b</span>, <span style="color:blue";>b</span>)</th>
           </tr>
         </thead>
         <tbody>
@@ -415,10 +430,16 @@
     <h5>
         Reference for Signals
     </h5>
-    <img src="{% static 'RobotXYZ_in_round_p55l50.png'%}" alt="signal graph" height="300"/>
 
-    <img src="{% static 'RobotW_in_round_p55l50.png'%}" alt="signal graph" height="300"/>
+    {% if subsession.round_number < 5 %}
+    <img src="{% static 'RobotsW_p55l50_reverse_1_4.png'%}" alt="signal graph" height="150"/>
+    {% endif %}
 
+    {% if subsession.round_number > 4 %}
+    <img src="{% static 'RobotsW_p55l50_reverse.png'%}" alt="signal graph" height="300"/>
+
+    <img src="{% static 'RobotsX_p55l50_reverse.png'%}" alt="signal graph" height="350"/>
+    {% endif %}
 {% endblock %}
 
 

@@ -44,7 +44,7 @@ class Player(BasePlayer):
                                      [1, 'Red'], [2, 'Blue'], [3, 'Both equally likely']
                                  ],
                                  widget=widgets.RadioSelect)
-    decision2 = models.IntegerField(label="If the 1st, 2nd, and 3rd signals are Red while the 4th signal is Blue, which color is more likely to be assigned for the round?",
+    decision2 = models.IntegerField(label="If the 1st, 3rd, and 4th signals are Red while the 2nd signal is Blue, which color is more likely to be assigned for the round?",
                                  choices=[
                                      [1, 'Red'], [2, 'Blue'], [3, 'Both equally likely']
                                  ],

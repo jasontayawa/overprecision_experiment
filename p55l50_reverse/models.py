@@ -30,7 +30,7 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'p55l50_reverse'
     players_per_group = None
-    num_rounds = 60
+    num_rounds = 64
 
 
 class Subsession(BaseSubsession):
@@ -86,19 +86,19 @@ class Subsession(BaseSubsession):
 
 
     def creating_session(self):
-        df = pd.read_csv('p55l50/rounds_p55l50.csv')
+        df = pd.read_csv('p55l50_reverse/rounds_p55l50.csv')
 
         for p in self.get_players():
             if self.round_number == 1:
-                p.partition = random.randint(1, 50)
+                p.partition = random.randint(1, 46)
             else:
                 p.partition = p.in_round(1).partition
 
-            p.color = df['Color'][(60 * (p.partition - 1)) + self.round_number - 1]
-            p.signal1 = df['Signal1'][(60 * (p.partition - 1)) + self.round_number - 1]
-            p.signal2 = df['Signal2'][(60 * (p.partition - 1)) + self.round_number - 1]
-            p.signal3 = df['Signal3'][(60 * (p.partition - 1)) + self.round_number - 1]
-            p.signal4 = df['Signal4'][(60 * (p.partition - 1)) + self.round_number - 1]
+            p.color = df['Color'][(64 * (p.partition - 1)) + self.round_number - 1]
+            p.signal1 = df['Signal1'][(64 * (p.partition - 1)) + self.round_number - 1]
+            p.signal2 = df['Signal2'][(64 * (p.partition - 1)) + self.round_number - 1]
+            p.signal3 = df['Signal3'][(64 * (p.partition - 1)) + self.round_number - 1]
+            p.signal4 = df['Signal4'][(64 * (p.partition - 1)) + self.round_number - 1]
 
         #Table 1 reverse showing Signals 3 and 4  (in the experiment 3 and 4 are presented first)
 
@@ -121,7 +121,7 @@ class Subsession(BaseSubsession):
         # Table 2 reverse with  s3,s4,s1,s2 = s3,r,s1,s2
         self.Rrrrr = df[(df.Color == 1) & (df.Signal1 == 1) & (df.Signal2 == 1) & (df.Signal3 == 1) & (df.Signal4 == 1)].count()['Color']
 
-        self.Rrrbr = df[(df.Color == 1) & (df.Signal1 == 1) & (df.Signal2 == 1) & (df.Signal3 == 0) & (df.Signal4 == 1)].count()['Color']
+        self.Rbrrr = df[(df.Color == 1) & (df.Signal1 == 1) & (df.Signal2 == 1) & (df.Signal3 == 0) & (df.Signal4 == 1)].count()['Color']
 
         self.Rrrrb = df[(df.Color == 1) & (df.Signal1 == 1) & (df.Signal2 == 0) & (df.Signal3 == 1) & (df.Signal4 == 1)].count()['Color']
 

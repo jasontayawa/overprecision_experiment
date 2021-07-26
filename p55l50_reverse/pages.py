@@ -57,6 +57,9 @@ class Guess1(Page):
         )
 
 class Guess2(Page):
+    def is_displayed(self):
+        return self.round_number >= 5
+
     form_model = 'player'
     form_fields = ['guess2', 'check_slider_two']
 
@@ -65,7 +68,7 @@ class Guess2(Page):
             return 'Please use the slider to make a decision.'
 
     def vars_for_template(self):
-        # table 1 reverse variables
+
         s1 = self.player.signal1
         s2 = self.player.signal2
         s3 = self.player.signal3
@@ -219,8 +222,8 @@ class Payment_Calculation(Page):
         return self.round_number == Constants.num_rounds
 
     def vars_for_template(self):
-        self.player.random_round1 = random.randint(1, 21)  # random.randint(1, 60)
-        self.player.random_round2 = random.randint(1, 21)  # random.randint(1, 60)
+        self.player.random_round1 = random.randint(1, 64)
+        self.player.random_round2 = random.randint(1, 64)
         player_in_round1 = self.player.in_round(self.player.random_round1)
         player_in_round2 = self.player.in_round(self.player.random_round2)
 
@@ -326,14 +329,19 @@ class Results(Page):
             x2=x2,
 
         )
+
+class Block1_1(Page):
+    def is_displayed(self):
+        return self.round_number == 1
+
 class Block2(Page):
     def is_displayed(self):
-        return self.round_number == 21
+        return self.round_number == 25
 
 class Block3(Page):
     def is_displayed(self):
-        return self.round_number == 41
+        return self.round_number == 45
 
 
 
-page_sequence = [Block2, Block3, Guess1, Guess2, Payment_Calculation, Results]
+page_sequence = [Block1_1, Block2, Block3, Guess1, Guess2, Payment_Calculation, Results]
